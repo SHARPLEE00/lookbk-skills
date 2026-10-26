@@ -1,0 +1,35 @@
+name: Showcase
+description: Share something you made with a Lookbk skill
+title: "[showcase] "
+labels: [showcase]
+body:
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Skill
+      options: [kinetic-title-drop, pixel-quest-promo, swiss-grid-deck, editorial-og-card, blueprint-architecture, mono-editorial-landing, waitlist-glow, a Lookbk Pro skill]
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Public link
+      description: An X post, a site or a video we can link to.
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Credit as
+      description: Your X handle or name.
+  - type: textarea
+    id: prompt
+    attributes:
+      label: What you asked your agent (optional)
+  - type: checkboxes
+    id: ok
+    attributes:
+      label: Permission
+      options:
+        - label: Lookbk may link to and credit this work in this repository and on lookbk.dev.
+          required: true
