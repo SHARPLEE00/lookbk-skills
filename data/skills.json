@@ -1,0 +1,79 @@
+{
+  "utm": "utm_source=github&utm_medium=readme&utm_campaign=lookbk-skills",
+  "free": [
+    {
+      "slug": "kinetic-title-drop",
+      "name": "Kinetic Title Drop",
+      "makes": "A six-second, three-beat kinetic type video (MP4, 1080p) for openers and announcements",
+      "makes_zh": "6 秒、三拍的动态字标题视频（MP4，1080p），用作开场和发布公告",
+      "needs": "Node.js 22+, FFmpeg",
+      "ask": "Make a 6-second kinetic title drop that says \"Ship / it / today.\" in our brand orange, 1080p, for an X post.",
+      "ask_zh": "做一个 6 秒的动态标题，文字是「Ship / it / today.」，用我们的品牌橙色，1080p，发 X 用。"
+    },
+    {
+      "slug": "pixel-quest-promo",
+      "name": "Pixel Quest Promo",
+      "makes": "A 20-second 8-bit promo where a pixel hero runs one stage per feature, on a 120 BPM grid",
+      "makes_zh": "20 秒 8-bit 宣传片：像素小人每跑过一关讲一个功能，卡 120 BPM 节拍",
+      "needs": "Node.js 22+, FFmpeg",
+      "ask": "Make a Pixel Quest promo for our app: four stages for sync, search, share and offline.",
+      "ask_zh": "给我们的 App 做一条像素闯关宣传片：同步、搜索、分享、离线四关。"
+    },
+    {
+      "slug": "swiss-grid-deck",
+      "name": "Swiss Grid Deck",
+      "makes": "A Swiss-grid slide deck from your notes: browser deck, PDF and editable PPTX with speaker notes",
+      "makes_zh": "把笔记变成瑞士网格风幻灯片：网页版、PDF 和可编辑 PPTX，带演讲备注",
+      "needs": "Node.js 18+, Chrome",
+      "ask": "Turn notes.md into a 12-slide Swiss Grid deck for our board meeting, with speaker notes, and export PDF and PPTX.",
+      "ask_zh": "把 notes.md 做成 12 页瑞士网格风的董事会汇报，带演讲备注，导出 PDF 和 PPTX。"
+    },
+    {
+      "slug": "editorial-og-card",
+      "name": "Editorial OG Card",
+      "makes": "1200×630 link-preview images for every blog post, with the meta tags wired up",
+      "makes_zh": "给每篇博客生成 1200×630 的分享卡片图，并接好 meta 标签",
+      "needs": "Node.js 18+, Chrome",
+      "ask": "Make Editorial OG cards for every post in /content/blog and save them next to each post.",
+      "ask_zh": "给 /content/blog 里每篇文章做分享卡片，存在文章旁边。"
+    },
+    {
+      "slug": "blueprint-architecture",
+      "name": "Blueprint Architecture Diagram",
+      "makes": "A blueprint-style system diagram from your repo or a description, as HTML, SVG and PNG",
+      "makes_zh": "从代码库或一段描述画出蓝图风格的系统架构图，输出 HTML、SVG 和 PNG",
+      "needs": "Node.js 18+, Chrome for the PNG",
+      "ask": "Read this repo and draw a Blueprint architecture diagram of the order service, with data flow animated.",
+      "ask_zh": "读一下这个仓库，画出订单服务的蓝图架构图，数据流做成动画。"
+    },
+    {
+      "slug": "mono-editorial-landing",
+      "name": "Mono Editorial Landing",
+      "makes": "A black-and-white editorial landing page drafted from your README, with a working waitlist form",
+      "makes_zh": "根据 README 生成黑白杂志风落地页，带能用的候补名单表单",
+      "needs": "Node.js 18+, Chrome for the checks",
+      "ask": "Build a Mono Editorial landing page from our README, with a waitlist form.",
+      "ask_zh": "根据我们的 README 做一个黑白杂志风落地页，带候补名单表单。"
+    },
+    {
+      "slug": "waitlist-glow",
+      "name": "Waitlist Glow",
+      "makes": "A one-screen waitlist page with a breathing glow and a sign-up form tested end to end",
+      "makes_zh": "一屏式候补名单页，带呼吸光效，报名表单端到端测过",
+      "needs": "Node.js 18+, Chrome, a form service",
+      "ask": "Make a Waitlist Glow page for our beta, purple glow, collecting emails with Formspree.",
+      "ask_zh": "给我们的内测做一个候补名单页，紫色光效，用 Formspree 收邮箱。"
+    }
+  ],
+  "pro": [
+    { "slug": "neon-motel-hero", "name": "Neon Motel Hero", "series": "footage-heroes" },
+    { "slug": "arcade-raccoon-hero", "name": "Arcade Raccoon Hero", "series": "footage-heroes" },
+    { "slug": "roller-diner-hero", "name": "Roller Diner Hero", "series": "footage-heroes" },
+    { "slug": "disco-rink-hero", "name": "Disco Rink Hero", "series": "footage-heroes" },
+    { "slug": "frosted-glass-hero", "name": "Frosted Glass Hero", "series": "motion-heroes" },
+    { "slug": "neon-bloom-hero", "name": "Neon Bloom Hero", "series": "motion-heroes" },
+    { "slug": "particle-portrait-hero", "name": "Particle Portrait Hero", "series": "motion-heroes" },
+    { "slug": "launch-film-after-hours", "name": "Launch Film: After Hours", "series": "launch-films" }
+  ],
+  "showcase": []
+}
