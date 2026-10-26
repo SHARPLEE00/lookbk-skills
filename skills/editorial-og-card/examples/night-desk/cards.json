@@ -1,0 +1,32 @@
+{
+  "theme": { "paper": "#131313", "ink": "#f2ede4", "accent": "#ff7a45" },
+  "defaults": { "kicker": "Night Desk", "author": "Ines Varga" },
+  "cards": [
+    {
+      "slug": "issue-41",
+      "title": "Why every newsroom is quietly *rebuilding its CMS*",
+      "topic": "Issue 41",
+      "meta": "Oct 2026",
+      "url": "nightdesk.example/41",
+      "tags": ["#media", "№ 41"],
+      "layout": 1
+    },
+    {
+      "slug": "issue-40",
+      "title": "The *night shift* that writes the morning",
+      "topic": "Issue 40",
+      "meta": "Sep 2026",
+      "url": "nightdesk.example/40",
+      "tags": ["#newsrooms"],
+      "layout": 2
+    },
+    {
+      "slug": "about",
+      "title": "A weekly letter about the people who make the news *after dark*",
+      "topic": "Subscribe",
+      "meta": "Every Friday",
+      "url": "nightdesk.example",
+      "art": "none"
+    }
+  ]
+}

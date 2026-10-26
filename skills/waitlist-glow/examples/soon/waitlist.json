@@ -1,0 +1,29 @@
+{
+  "brand": { "name": "soon", "note": "Launching winter 2026" },
+  "eyebrow": "Private beta",
+  "title": "Something *calm*\nis coming.",
+  "text": "A notes app that breathes with you. Fewer buttons, softer edges, and a home screen you'll actually want to open.",
+  "form": {
+    "provider": "formspree",
+    "id": "mvoeqrbd",
+    "button": "Join the waitlist",
+    "success": "You're on the list. We'll send one email when your invite is ready."
+  },
+  "proof": "Early invites roll out weekly",
+  "fine": "One email when your invite is ready. No newsletter, no sharing.",
+  "launch": "2026-12-01T17:00:00Z",
+  "links": [
+    { "label": "Privacy", "href": "/privacy" },
+    { "label": "hello@soon.example", "href": "mailto:hello@soon.example" }
+  ],
+  "theme": {
+    "bg": "#0b0b10",
+    "fg": "#f4f5f8",
+    "glow": ["#ffb37a", "#ff7ab6", "#7a9bff"]
+  },
+  "meta": {
+    "title": "soon: something calm is coming",
+    "description": "A notes app that breathes with you. Join the waitlist for an early invite.",
+    "url": "https://soon.example/"
+  }
+}

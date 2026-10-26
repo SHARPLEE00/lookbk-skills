@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-26",
+  "checks": [
+    "node scripts/apply-brief.mjs out/inkwell-launch examples/inkwell-launch/brief.json",
+    "npx --yes hyperframes@0.8.192 render (out/inkwell-launch)",
+    "node scripts/apply-brief.mjs out/hopscotch examples/hopscotch/brief.json",
+    "npx --yes hyperframes@0.8.192 render (out/hopscotch)"
+  ],
+  "agents": []
+}

@@ -1,0 +1,179 @@
+/* Editorial OG Card. One 1200×630 card; card.js fills it from the card's
+   data and sets the colours as custom properties on #card. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+}
+#card {
+  position: relative;
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Top rule: kicker · topic on the left, meta on the right. */
+.rule {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  top: 64px;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--ink);
+  font: 500 15px/20px var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+  white-space: nowrap;
+}
+.rule b {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+/* The headline: set as text, shrunk by card.js until it fits its box. */
+#title {
+  position: absolute;
+  left: 64px;
+  top: 140px;
+  width: 640px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 84px;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+#title em {
+  color: var(--accent-text);
+}
+#card.no-art #title {
+  width: 1000px;
+  font-size: 96px;
+}
+
+/* Byline. */
+.by {
+  position: absolute;
+  left: 64px;
+  bottom: 56px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 19px;
+  font-weight: 500;
+}
+.av {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--paper);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.av img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.by small {
+  display: block;
+  margin-top: 2px;
+  color: var(--mute);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Art: a block composition picked from the post, or the post's own image. */
+.art {
+  position: absolute;
+  right: 64px;
+  top: 130px;
+  width: 390px;
+  height: 430px;
+}
+.art > * {
+  position: absolute;
+  border: 2px solid var(--ink);
+}
+.art .circle {
+  border-radius: 50%;
+}
+.art .pill {
+  border-radius: 999px;
+}
+.art .photo {
+  inset: 0;
+  overflow: hidden;
+}
+.art .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.specimen {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 22px;
+}
+.specimen span {
+  font: 400 64px/1 var(--serif);
+}
+.specimen small {
+  font: 500 14px/1.45 var(--mono);
+  color: var(--mute);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.glyph {
+  display: grid;
+  place-items: center;
+  font: 400 150px/1 var(--serif);
+}
+.bars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.bars i {
+  border: 2px solid var(--ink);
+}
+.lines {
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  padding: 0 22px;
+}
+.lines i {
+  height: 6px;
+  background: var(--panel);
+}
+.tag {
+  border-width: 2px;
+  padding: 5px 8px;
+  background: var(--paper);
+  font: 500 13px/16px var(--mono);
+  white-space: nowrap;
+}

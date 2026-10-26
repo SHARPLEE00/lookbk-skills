@@ -1,0 +1,86 @@
+{
+  "title": "Support assistant · RAG",
+  "subtitle": "Ingest and answer paths · from apps/assistant and infra/ · 2 Nov 2026",
+  "sheet": "02 / 03",
+  "direction": "TB",
+  "theme": "whiteprint",
+  "groups": [
+    { "id": "ingest", "label": "Ingest · nightly" },
+    { "id": "answer", "label": "Answer · per question" }
+  ],
+  "nodes": [
+    {
+      "id": "docs",
+      "label": "Help centre",
+      "sub": "Markdown · 2,400 pages",
+      "kind": "storage",
+      "group": "ingest"
+    },
+    {
+      "id": "tickets",
+      "label": "Solved tickets",
+      "sub": "Zendesk export",
+      "kind": "external",
+      "group": "ingest"
+    },
+    {
+      "id": "chunker",
+      "label": "Chunker",
+      "sub": "800 tokens · overlap 80",
+      "kind": "function",
+      "group": "ingest"
+    },
+    {
+      "id": "embed",
+      "label": "Embedder",
+      "sub": "batch · 64 per call",
+      "kind": "service",
+      "group": "ingest"
+    },
+    {
+      "id": "vectors",
+      "label": "pgvector",
+      "sub": "chunks · 1.2M rows",
+      "kind": "database"
+    },
+    {
+      "id": "widget",
+      "label": "Chat widget",
+      "sub": "React · in-app",
+      "kind": "client",
+      "group": "answer"
+    },
+    {
+      "id": "api",
+      "label": "Assistant API",
+      "sub": "FastAPI · 3 pods",
+      "kind": "service",
+      "group": "answer",
+      "focus": true
+    },
+    {
+      "id": "llm",
+      "label": "LLM",
+      "sub": "streaming answers",
+      "kind": "external",
+      "group": "answer"
+    },
+    {
+      "id": "cache",
+      "label": "Answer cache",
+      "sub": "Redis · 24 h TTL",
+      "kind": "cache",
+      "group": "answer"
+    }
+  ],
+  "edges": [
+    { "from": "docs", "to": "chunker", "label": "sync" },
+    { "from": "tickets", "to": "chunker", "label": "weekly", "async": true },
+    { "from": "chunker", "to": "embed" },
+    { "from": "embed", "to": "vectors", "label": "upsert" },
+    { "from": "widget", "to": "api", "label": "POST /ask" },
+    { "from": "api", "to": "cache", "label": "lookup" },
+    { "from": "api", "to": "vectors", "label": "top-k 8" },
+    { "from": "api", "to": "llm", "label": "prompt + chunks" }
+  ]
+}

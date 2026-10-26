@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-26",
+  "checks": [
+    "node scripts/build.mjs examples/quietly/page.json out/quietly",
+    "node scripts/check.mjs out/quietly/index.html",
+    "node scripts/build.mjs examples/galley/page.json out/galley",
+    "node scripts/check.mjs out/galley/index.html"
+  ],
+  "agents": []
+}

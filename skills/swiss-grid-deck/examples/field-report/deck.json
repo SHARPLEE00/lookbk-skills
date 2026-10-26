@@ -1,0 +1,85 @@
+{
+  "title": "Harbour water quality, 2026",
+  "org": "Kelp & Co. Field Lab",
+  "footer": "Field report · Q3 2026",
+  "theme": { "paper": "#eef2f3", "ink": "#0d1b24", "accent": "#0a7bd6" },
+  "slides": [
+    {
+      "layout": "title",
+      "title": "Harbour\nwater, Q3",
+      "byline": "Field report for the city council",
+      "date": "Bergen, 3 October 2026"
+    },
+    {
+      "layout": "statement",
+      "label": "Summary",
+      "kicker": "In one line",
+      "title": "The harbour is the cleanest it has been since we started measuring, and *one outfall* is the reason it isn't cleaner."
+    },
+    {
+      "layout": "bars",
+      "label": "Clarity",
+      "kicker": "Secchi depth, metres",
+      "title": "Visibility keeps *rising*",
+      "text": "Average depth at which a white disc disappears, across 12 sampling points. Higher is clearer.",
+      "bars": [
+        { "label": "2021", "value": 2.4 },
+        { "label": "2022", "value": 2.9 },
+        { "label": "2023", "value": 3.1 },
+        { "label": "2024", "value": 3.6 },
+        { "label": "2025", "value": 4.0 },
+        { "label": "2026", "value": 4.7 }
+      ],
+      "suffix": " m",
+      "source": "Field Lab sampling, June–August each year"
+    },
+    {
+      "layout": "three",
+      "label": "Findings",
+      "kicker": "What we measured",
+      "title": "Three numbers for the council.",
+      "items": [
+        {
+          "value": "4.7m",
+          "heading": "Clarity",
+          "text": "Best summer reading in six years of sampling."
+        },
+        {
+          "value": "−38%",
+          "heading": "Nitrogen",
+          "text": "Down since the 2024 upgrade at the east plant."
+        },
+        {
+          "value": "1",
+          "heading": "Problem outfall",
+          "text": "Point 7 at Nordnes still fails after heavy rain."
+        }
+      ]
+    },
+    {
+      "layout": "number",
+      "label": "Point 7",
+      "value": "9 of 14",
+      "text": "rain events this summer pushed *Point 7* over the bathing-water limit within 24 hours.",
+      "source": "E. coli counts, EU bathing water directive"
+    },
+    {
+      "layout": "list",
+      "label": "Recommendations",
+      "kicker": "Asks for the council",
+      "title": "Fix one outfall, keep the rest going.",
+      "items": [
+        "Fund a storm-water tank at Nordnes in 2027",
+        "Keep weekly sampling at Point 7 year round",
+        "Publish readings online the day they're taken",
+        "Repeat this report every quarter"
+      ]
+    },
+    {
+      "layout": "closing",
+      "label": "Questions",
+      "title": "Questions?",
+      "contact": ["fieldlab@kelp.example", "kelp.example/harbour"]
+    }
+  ]
+}

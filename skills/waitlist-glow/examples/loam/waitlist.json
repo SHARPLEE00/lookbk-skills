@@ -1,0 +1,33 @@
+{
+  "brand": { "name": "Loam", "note": "First batch ships spring 2027" },
+  "eyebrow": "Pre-orders open soon",
+  "title": "Know when your\n*garden* is thirsty.",
+  "text": "Loam is a solar soil sensor that texts you before your plants wilt. No hub, no app to open, no batteries to change.",
+  "form": {
+    "provider": "netlify",
+    "name": "loam-waitlist",
+    "button": "Get on the list",
+    "placeholder": "you@example.com",
+    "success": "Thanks! You'll hear from us before pre-orders open to everyone."
+  },
+  "proof": "Founder's price for the first 500 sign-ups",
+  "fine": "We'll email you twice: when pre-orders open and when your sensor ships.",
+  "launch": "2027-03-20T09:00:00Z",
+  "links": [
+    { "label": "How it works", "href": "/how" },
+    { "label": "Privacy", "href": "/privacy" }
+  ],
+  "theme": {
+    "bg": "#f3efe6",
+    "fg": "#1f2a1f",
+    "glow": ["#b9dc8c", "#f2c38b", "#9cc8ea"],
+    "accent": "#4f8a2e",
+    "serif": "Newsreader",
+    "sans": "Inter"
+  },
+  "meta": {
+    "title": "Loam: know when your garden is thirsty",
+    "description": "A solar soil sensor that texts you before your plants wilt. Join the list for the first batch.",
+    "url": "https://loam.example/"
+  }
+}

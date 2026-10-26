@@ -1,0 +1,10 @@
+{
+  "name": "kinetic-title-drop",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.192 preview",
+    "check": "npx --yes hyperframes@0.8.192 check",
+    "render": "npx --yes hyperframes@0.8.192 render --quality delivery -o renders/title-drop.mp4"
+  }
+}

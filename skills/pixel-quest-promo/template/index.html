@@ -1,0 +1,176 @@
+<!doctype html>
+<html
+  lang="en"
+  data-composition-variables='[
+      {"id":"product","type":"string","label":"Product name, the title-screen logo","default":"INKWELL","maxLength":12},
+      {"id":"subtitle","type":"string","label":"Line under the logo (may be empty)","default":"A NOTES APP QUEST","maxLength":24,"optional":true},
+      {"id":"cta","type":"string","label":"Blinking prompt","default":"PRESS START","maxLength":16},
+      {"id":"hero","type":"enum","label":"Hero sprite","default":"robot","options":[{"value":"robot","label":"Robot"},{"value":"cat","label":"Cat"},{"value":"knight","label":"Knight"}]},
+      {"id":"level1Name","type":"string","label":"Stage 1: feature name","default":"QUICK CAPTURE","maxLength":14},
+      {"id":"level1Text","type":"string","label":"Stage 1: one line about it","default":"NOTES SAVE AS YOU TYPE","maxLength":30},
+      {"id":"level1Item","type":"enum","label":"Stage 1: power-up","default":"bolt","options":[{"value":"bolt","label":"Bolt"},{"value":"star","label":"Star"},{"value":"heart","label":"Heart"},{"value":"key","label":"Key"},{"value":"gem","label":"Gem"},{"value":"shield","label":"Shield"},{"value":"clock","label":"Clock"},{"value":"chat","label":"Speech bubble"}]},
+      {"id":"level2Name","type":"string","label":"Stage 2: feature name","default":"FAST SEARCH","maxLength":14},
+      {"id":"level2Text","type":"string","label":"Stage 2: one line about it","default":"FIND ANY NOTE IN 0.1 S","maxLength":30},
+      {"id":"level2Item","type":"enum","label":"Stage 2: power-up","default":"gem","options":[{"value":"bolt","label":"Bolt"},{"value":"star","label":"Star"},{"value":"heart","label":"Heart"},{"value":"key","label":"Key"},{"value":"gem","label":"Gem"},{"value":"shield","label":"Shield"},{"value":"clock","label":"Clock"},{"value":"chat","label":"Speech bubble"}]},
+      {"id":"level3Name","type":"string","label":"Stage 3: feature name","default":"PRIVATE VAULT","maxLength":14},
+      {"id":"level3Text","type":"string","label":"Stage 3: one line about it","default":"END-TO-END ENCRYPTED","maxLength":30},
+      {"id":"level3Item","type":"enum","label":"Stage 3: power-up","default":"shield","options":[{"value":"bolt","label":"Bolt"},{"value":"star","label":"Star"},{"value":"heart","label":"Heart"},{"value":"key","label":"Key"},{"value":"gem","label":"Gem"},{"value":"shield","label":"Shield"},{"value":"clock","label":"Clock"},{"value":"chat","label":"Speech bubble"}]},
+      {"id":"headline","type":"string","label":"Ending: the big line","default":"LEVEL UP","maxLength":12},
+      {"id":"subline","type":"string","label":"Ending: the line under it (may be empty)","default":"YOUR NOTES","maxLength":20,"optional":true},
+      {"id":"url","type":"string","label":"Ending: link (may be empty)","default":"INKWELL.EXAMPLE","maxLength":28,"optional":true},
+      {"id":"sky","type":"color","label":"Sky","default":"#1b1446"},
+      {"id":"ink","type":"color","label":"Text","default":"#f4f1ff"},
+      {"id":"accent","type":"color","label":"Accent (logo, headline)","default":"#3fb950"},
+      {"id":"grass","type":"color","label":"Ground","default":"#2c8c3c"}
+    ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel Quest Promo</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --sky: #1b1446;
+        --ink: #f4f1ff;
+        --accent: #3fb950;
+        --grass: #2c8c3c;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--sky);
+        image-rendering: pixelated;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+      }
+      .layer {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+      }
+      /* Every drawing is an SVG placed by quest.js with a transform. */
+      .sprite,
+      .scene,
+      .sky {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+      }
+      .sprite svg {
+        display: block;
+      }
+      .scene,
+      .sky {
+        width: 1920px;
+        height: 1080px;
+      }
+      .dialog {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        height: 138px;
+        padding: 40px 48px;
+        border: 8px solid;
+        box-shadow:
+          8px 8px 0 #0d0a1f,
+          inset 0 0 0 8px rgba(0, 0, 0, 0.25);
+      }
+      .dialog .sprite {
+        position: static;
+      }
+      /* A faint CRT: scanlines and a soft vignette. */
+      #crt {
+        background:
+          repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.16) 0 2px,
+            transparent 2px 6px
+          ),
+          radial-gradient(
+            120% 95% at 50% 50%,
+            transparent 60%,
+            rgba(0, 0, 0, 0.42)
+          );
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="20"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- quest.js fills these four layers and moves everything in them. -->
+      <div
+        id="scenes-clip"
+        class="clip"
+        data-start="0"
+        data-duration="20"
+        data-track-index="0"
+        data-layout-ignore
+      >
+        <span id="scenes" class="layer"></span>
+      </div>
+      <div
+        id="world-clip"
+        class="clip"
+        data-start="0"
+        data-duration="20"
+        data-track-index="1"
+        data-layout-ignore
+      >
+        <span id="world" class="layer"></span>
+      </div>
+      <div
+        id="ui-clip"
+        class="clip"
+        data-start="0"
+        data-duration="20"
+        data-track-index="2"
+      >
+        <span id="ui" class="layer"></span>
+      </div>
+      <div
+        id="fx-clip"
+        class="clip"
+        data-start="0"
+        data-duration="20"
+        data-track-index="3"
+        data-layout-ignore
+      >
+        <span id="crt" class="layer"></span>
+        <span id="wipe" class="layer"></span>
+      </div>
+    </div>
+    <script src="quest-art.js"></script>
+    <script src="quest.js"></script>
+    <script>
+      // Register the timeline once it is built.
+      window.__timelines['main'] = window.buildQuest()
+    </script>
+  </body>
+</html>

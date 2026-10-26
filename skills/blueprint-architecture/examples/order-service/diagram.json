@@ -1,0 +1,84 @@
+{
+  "title": "Order service · v2",
+  "subtitle": "System architecture · from /services and docker-compose.yml · 21 Oct 2026",
+  "sheet": "01 / 01",
+  "groups": [{ "id": "core", "label": "Order platform" }],
+  "nodes": [
+    {
+      "id": "clients",
+      "label": "Web + iOS",
+      "sub": "Next.js · SwiftUI",
+      "kind": "client"
+    },
+    {
+      "id": "gateway",
+      "label": "API gateway",
+      "sub": "auth · rate limit",
+      "kind": "service"
+    },
+    {
+      "id": "orders",
+      "label": "Order service",
+      "sub": "v2 · Go · 6 pods",
+      "kind": "service",
+      "group": "core",
+      "focus": true
+    },
+    {
+      "id": "payments",
+      "label": "Payments",
+      "sub": "Stripe adapter",
+      "kind": "service",
+      "group": "core"
+    },
+    {
+      "id": "inventory",
+      "label": "Inventory",
+      "sub": "gRPC · Rust",
+      "kind": "service",
+      "group": "core"
+    },
+    {
+      "id": "stripe",
+      "label": "Stripe",
+      "sub": "card payments",
+      "kind": "external"
+    },
+    {
+      "id": "bus",
+      "label": "Event bus",
+      "sub": "Kafka · 3 topics",
+      "kind": "queue"
+    },
+    {
+      "id": "notifier",
+      "label": "Notifier",
+      "sub": "email · push",
+      "kind": "function"
+    },
+    {
+      "id": "db",
+      "label": "Postgres",
+      "sub": "orders · stock",
+      "kind": "database"
+    },
+    {
+      "id": "redis",
+      "label": "Redis",
+      "sub": "carts · sessions",
+      "kind": "cache"
+    }
+  ],
+  "edges": [
+    { "from": "clients", "to": "gateway", "label": "HTTPS" },
+    { "from": "gateway", "to": "orders", "label": "POST /orders" },
+    { "from": "orders", "to": "redis", "label": "cart" },
+    { "from": "orders", "to": "payments", "label": "charge" },
+    { "from": "payments", "to": "stripe", "label": "PaymentIntent" },
+    { "from": "orders", "to": "inventory", "label": "reserve" },
+    { "from": "orders", "to": "db", "label": "SQL" },
+    { "from": "inventory", "to": "db", "label": "SQL" },
+    { "from": "orders", "to": "bus", "label": "order.created", "async": true },
+    { "from": "bus", "to": "notifier", "label": "consume", "async": true }
+  ]
+}

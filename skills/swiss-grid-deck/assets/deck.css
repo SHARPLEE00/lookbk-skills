@@ -1,0 +1,473 @@
+/* Swiss Grid Deck. Every slide is 1920×1080 on an eight-column grid with
+   96 px margins and 24 px gutters; deck.js scales it to the window. Colours
+   come from the deck's theme as --paper, --ink and --accent. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  background: #1b1b1b;
+  overflow: hidden;
+}
+body {
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* ---------- Stage ---------- */
+.deck {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1920px;
+  height: 1080px;
+  transform: translate(-50%, -50%);
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  visibility: hidden;
+}
+.slide.on {
+  visibility: visible;
+}
+.slide.dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+.notes {
+  display: none;
+}
+
+/* ---------- Furniture: grid, meta row, footer ---------- */
+.grid {
+  position: absolute;
+  inset: 0 96px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 24px;
+  pointer-events: none;
+}
+.grid i {
+  border-left: 1px solid color-mix(in srgb, currentColor 6%, transparent);
+  border-right: 1px solid color-mix(in srgb, currentColor 6%, transparent);
+}
+.meta {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  top: 72px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 24px;
+  font-size: 22px;
+  font-weight: 500;
+}
+.meta span:nth-child(1) {
+  grid-column: 1 / span 3;
+}
+.meta span:nth-child(2) {
+  grid-column: 4 / span 4;
+}
+.meta span:nth-child(3) {
+  grid-column: 8;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.foot {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  bottom: 64px;
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  padding-top: 18px;
+  border-top: 2px solid currentColor;
+  font-size: 22px;
+  font-weight: 500;
+}
+.kicker {
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.h2 {
+  font-size: 96px;
+  line-height: 0.94;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+.copy {
+  font-size: 34px;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+.muted {
+  opacity: 0.72;
+}
+
+/* ---------- title ---------- */
+.l-title h1 {
+  position: absolute;
+  left: 96px;
+  top: 200px;
+  width: 1150px;
+  font-size: 250px;
+  line-height: 0.84;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+.l-title .dot {
+  position: absolute;
+  right: 150px;
+  top: 250px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ---------- section ---------- */
+.l-section .num {
+  position: absolute;
+  left: 84px;
+  top: 150px;
+  font-size: 420px;
+  line-height: 0.8;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.l-section .h2 {
+  position: absolute;
+  left: 96px;
+  bottom: 330px;
+  width: 1500px;
+  font-size: 120px;
+}
+.l-section .copy {
+  position: absolute;
+  left: 96px;
+  bottom: 170px;
+  width: 1100px;
+}
+
+/* ---------- statement ---------- */
+.l-statement .kicker {
+  position: absolute;
+  left: 96px;
+  top: 200px;
+}
+.l-statement .h2 {
+  position: absolute;
+  left: 96px;
+  top: 260px;
+  width: 1560px;
+  font-size: 112px;
+}
+
+/* ---------- three-up ---------- */
+.l-three .head {
+  position: absolute;
+  left: 96px;
+  top: 190px;
+  width: 1300px;
+}
+.l-three .head .h2 {
+  margin-top: 22px;
+  font-size: 80px;
+}
+.l-three .cols {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  bottom: 170px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.l-three .cols > div {
+  padding-top: 26px;
+  border-top: 8px solid currentColor;
+}
+.l-three .cols b {
+  display: block;
+  font-size: 110px;
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  color: var(--accent);
+}
+.l-three .cols h3 {
+  margin: 22px 0 12px;
+  font-size: 40px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+.l-three .cols p {
+  max-width: 500px;
+  font-size: 26px;
+  line-height: 1.4;
+}
+
+/* ---------- big-number ---------- */
+.l-number .big {
+  position: absolute;
+  left: 84px;
+  top: 170px;
+  font-size: 420px;
+  line-height: 0.8;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.l-number .copy {
+  position: absolute;
+  left: 96px;
+  bottom: 170px;
+  width: 1100px;
+  font-size: 52px;
+  line-height: 1.12;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+/* ---------- bars ---------- */
+.l-bars .head {
+  position: absolute;
+  left: 96px;
+  top: 190px;
+  width: 760px;
+}
+.l-bars .head .h2 {
+  margin-top: 22px;
+  font-size: 80px;
+}
+.l-bars .copy {
+  position: absolute;
+  left: 96px;
+  bottom: 170px;
+  width: 760px;
+}
+.l-bars .chart {
+  position: absolute;
+  right: 96px;
+  bottom: 216px;
+  width: 856px;
+  height: 560px;
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
+.l-bars .chart > div {
+  position: relative;
+  flex: 1;
+  background: currentColor;
+}
+.l-bars .chart > div.hi {
+  background: var(--accent);
+}
+.l-bars .chart span,
+.l-bars .chart b {
+  position: absolute;
+  left: 0;
+  right: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+.l-bars .chart span {
+  bottom: -46px;
+  font-size: 22px;
+  font-weight: 600;
+}
+.l-bars .chart b {
+  top: -44px;
+  font-size: 30px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- quote ---------- */
+.l-quote .mark {
+  position: absolute;
+  left: 80px;
+  top: 130px;
+  font-size: 300px;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--accent);
+}
+.l-quote blockquote {
+  position: absolute;
+  left: 96px;
+  top: 330px;
+  width: 1560px;
+  font-size: 84px;
+  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+.l-quote cite {
+  position: absolute;
+  left: 96px;
+  bottom: 170px;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ---------- list ---------- */
+.l-list .head {
+  position: absolute;
+  left: 96px;
+  top: 190px;
+  width: 1300px;
+}
+.l-list .head .h2 {
+  margin-top: 22px;
+  font-size: 80px;
+}
+.l-list ol {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  bottom: 170px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+  list-style: none;
+}
+.l-list li {
+  display: flex;
+  gap: 28px;
+  padding: 24px 0 26px;
+  border-top: 2px solid currentColor;
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.l-list li b {
+  flex: none;
+  width: 56px;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- closing ---------- */
+.l-closing .thanks {
+  position: absolute;
+  left: 96px;
+  top: 290px;
+  font-size: 260px;
+  line-height: 0.84;
+  font-weight: 800;
+  letter-spacing: -0.065em;
+}
+.l-closing .contact {
+  position: absolute;
+  right: 96px;
+  bottom: 170px;
+  text-align: right;
+  font-size: 32px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ---------- Overview (O) and notes (N) ---------- */
+body.overview {
+  overflow: auto;
+}
+body.overview .deck {
+  position: static;
+  width: auto;
+  height: auto;
+  transform: none !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(384px, 1fr));
+  gap: 24px;
+  padding: 24px;
+}
+body.overview .slide {
+  position: relative;
+  visibility: visible;
+  width: 1920px;
+  height: 1080px;
+  zoom: 0.2;
+  cursor: pointer;
+  outline: 0 solid #fff;
+}
+body.overview .slide.on {
+  outline-width: 20px;
+}
+.notes-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 32vh;
+  overflow: auto;
+  padding: 18px 24px 22px;
+  background: rgba(15, 15, 15, 0.94);
+  color: #f2f2f2;
+  font:
+    500 18px/1.5 system-ui,
+    sans-serif;
+  display: none;
+}
+body.notes .notes-panel {
+  display: block;
+}
+.notes-panel small {
+  display: block;
+  margin-bottom: 6px;
+  opacity: 0.6;
+}
+
+/* ---------- Print: one slide per page, for PDF ---------- */
+@page {
+  size: 1920px 1080px;
+  margin: 0;
+}
+@media print {
+  html,
+  body {
+    height: auto;
+    overflow: visible;
+    background: none;
+  }
+  .deck {
+    position: static;
+    transform: none !important;
+    width: 1920px;
+    height: auto;
+  }
+  .slide {
+    position: relative;
+    visibility: visible;
+    width: 1920px;
+    height: 1080px;
+    break-after: page;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .notes-panel {
+    display: none !important;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "product": "HOPSCOTCH",
+  "subtitle": "BUILD A STREAK, ONE HOP",
+  "cta": "TAP TO PLAY",
+  "hero": "cat",
+  "level1Name": "DAILY HOP",
+  "level1Text": "ONE TAP AND TODAY IS DONE",
+  "level1Item": "clock",
+  "level2Name": "STREAK SHIELD",
+  "level2Text": "MISS A DAY, KEEP YOUR RUN",
+  "level2Item": "shield",
+  "level3Name": "FRIEND QUESTS",
+  "level3Text": "TEAM UP WITH 3 FRIENDS",
+  "level3Item": "heart",
+  "headline": "HOP TO IT",
+  "subline": "FREE FOR 30 DAYS",
+  "url": "HOPSCOTCH.EXAMPLE",
+  "sky": "#9ad8f5",
+  "ink": "#1a1b3a",
+  "accent": "#c2185b",
+  "grass": "#4caf50"
+}

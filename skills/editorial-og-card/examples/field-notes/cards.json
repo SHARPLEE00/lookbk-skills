@@ -1,0 +1,53 @@
+{
+  "theme": {
+    "paper": "#fafaf7",
+    "ink": "#17181c",
+    "accent": "#2433e8"
+  },
+  "cards": [
+    {
+      "slug": "design-system-in-a-week",
+      "title": "Shipping a design system *in a week*",
+      "kicker": "Field guide",
+      "topic": "Design systems",
+      "meta": "8 min read",
+      "author": "Mara Reyes",
+      "url": "fieldnotes.example/posts/design-system-in-a-week",
+      "out": "og/design-system-in-a-week.png",
+      "date": "2026-10-14"
+    },
+    {
+      "slug": "one-queue",
+      "title": "What we learned moving *40 services* onto one queue",
+      "kicker": "Article",
+      "topic": "Infrastructure",
+      "meta": "12 min read",
+      "author": "Dev Okafor",
+      "url": "fieldnotes.example/posts/one-queue",
+      "out": "og/one-queue.png",
+      "date": "2026-09-30"
+    },
+    {
+      "slug": "boring-dashboards",
+      "title": "The case for *boring* dashboards",
+      "kicker": "Article",
+      "topic": "Data",
+      "meta": "4 min read",
+      "author": "Mara Reyes",
+      "url": "fieldnotes.example/posts/boring-dashboards",
+      "out": "og/boring-dashboards.png",
+      "date": "2026-09-12"
+    },
+    {
+      "slug": "pricing-maths",
+      "title": "Pricing pages that don't make people *do maths*",
+      "kicker": "Teardown",
+      "topic": "Growth",
+      "meta": "6 min read",
+      "author": "Lin Hart",
+      "url": "fieldnotes.example/posts/pricing-maths",
+      "out": "og/pricing-maths.png",
+      "date": "2026-08-21"
+    }
+  ]
+}

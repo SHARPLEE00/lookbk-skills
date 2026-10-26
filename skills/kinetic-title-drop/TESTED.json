@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-26",
+  "checks": [
+    "node scripts/apply-brief.mjs out/relay-v2 examples/relay-v2/brief.json",
+    "npx --yes hyperframes@0.8.192 render (out/relay-v2)",
+    "node scripts/apply-brief.mjs out/fieldnote-beta examples/fieldnote-beta/brief.json",
+    "npx --yes hyperframes@0.8.192 render (out/fieldnote-beta)"
+  ],
+  "agents": []
+}

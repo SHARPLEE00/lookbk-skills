@@ -1,0 +1,95 @@
+{
+  "title": "Design systems in 2026",
+  "org": "Studio Nord",
+  "footer": "Design systems in 2026",
+  "theme": { "paper": "#f4f4f1", "ink": "#121212", "accent": "#e3262b" },
+  "slides": [
+    {
+      "layout": "title",
+      "title": "Design\nsystems\nin 2026",
+      "byline": "Presented by Lena Brandt, Head of Design",
+      "date": "Zürich, 14 November 2026",
+      "notes": "Welcome. Twenty minutes, then questions. The short version: we ship more with fewer parts."
+    },
+    {
+      "layout": "three",
+      "label": "What changed",
+      "kicker": "The year in three moves",
+      "title": "We stopped drawing screens and started shipping *rules*.",
+      "items": [
+        {
+          "value": "01",
+          "heading": "One token set",
+          "text": "Colour, type and spacing live in one file every product reads from."
+        },
+        {
+          "value": "02",
+          "heading": "Agents build pages",
+          "text": "Marketing pages are assembled by agents and reviewed by one designer."
+        },
+        {
+          "value": "03",
+          "heading": "Fewer components",
+          "text": "We cut the library from 214 to 61 components without losing a layout."
+        }
+      ],
+      "source": "Source: internal audit, Q3",
+      "notes": "Each of these took about a quarter. The order mattered: tokens first."
+    },
+    {
+      "layout": "bars",
+      "label": "Delivery speed",
+      "kicker": "Pages per designer per month",
+      "title": "+184% since we moved to *tokens*",
+      "text": "The jump came after agents started working from the shared token file instead of screenshots.",
+      "bars": [
+        { "label": "2022", "value": 3.1 },
+        { "label": "2023", "value": 3.8 },
+        { "label": "2024", "value": 3.5 },
+        { "label": "2025", "value": 4.6 },
+        { "label": "2026", "value": 13.1 }
+      ],
+      "source": "n = 38 designers across 6 product teams"
+    },
+    {
+      "layout": "section",
+      "number": "02",
+      "title": "What we'd do *differently*",
+      "text": "Three things that cost us a quarter each, and how to skip them."
+    },
+    {
+      "layout": "list",
+      "label": "Lessons",
+      "kicker": "If you start this year",
+      "title": "Do these before you touch a component.",
+      "items": [
+        "Name tokens by role, not by colour",
+        "Write the rules down where agents can read them",
+        "Delete before you add",
+        "Give one person the final say on type",
+        "Review pages, not screenshots",
+        "Measure what ships, not what's drawn"
+      ]
+    },
+    {
+      "layout": "quote",
+      "label": "From the teams",
+      "quote": "The first week felt slower. By week three we had stopped arguing about *spacing* altogether.",
+      "by": "Jonas Weber, Product Designer, Payments"
+    },
+    {
+      "layout": "number",
+      "label": "Where it's going",
+      "value": "61",
+      "text": "components left in the library, down from 214. Our goal for 2027 is *under 50*.",
+      "source": "Library count, 1 November 2026"
+    },
+    {
+      "layout": "closing",
+      "label": "Questions",
+      "title": "Thank\n*you*.",
+      "contact": ["lena@studionord.example", "studionord.example/system"],
+      "source": "Slides and tokens: go/ds-2026"
+    }
+  ]
+}

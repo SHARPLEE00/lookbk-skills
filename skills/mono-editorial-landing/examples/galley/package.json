@@ -1,0 +1,14 @@
+{
+  "name": "galley-press",
+  "version": "1.4.0",
+  "description": "Print-ready books from plain Markdown.",
+  "homepage": "https://github.com/you/galley#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/you/galley.git"
+  },
+  "license": "MIT",
+  "bin": {
+    "galley": "bin/galley.js"
+  }
+}

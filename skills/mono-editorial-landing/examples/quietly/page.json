@@ -1,0 +1,149 @@
+{
+  "brand": { "name": "Quietly", "href": "/" },
+  "nav": [
+    { "label": "Product", "href": "#morning-page" },
+    { "label": "Manifesto", "href": "#manifesto" },
+    { "label": "Questions", "href": "#faq" }
+  ],
+  "issue": [
+    "No. 01 — Autumn edition",
+    "Calendar · Inbox · Focus",
+    "Private beta, 2026"
+  ],
+  "hero": {
+    "title": "Quiet software for *loud* weeks.",
+    "lede": "Quietly folds your calendar, inbox and to-dos into one calm page each morning. It decides what can wait, so you can do the one thing that can’t.",
+    "form": {
+      "provider": "formspree",
+      "id": "xqkzvwpa",
+      "button": "Request access",
+      "success": "You’re on the list. Invites go out on Mondays; yours will come from hello@quietly.example."
+    },
+    "note": "Invites go out every Monday. One email, no newsletter."
+  },
+  "columns": [
+    {
+      "kicker": "Morning page",
+      "title": "One page, every morning.",
+      "text": "Meetings, replies and tasks arrive as a single ruled page you can read in ninety seconds."
+    },
+    {
+      "kicker": "Quiet hours",
+      "title": "Silence by default.",
+      "text": "Notifications wait in a tray until the hour you chose. The people you mark as urgent can still reach you."
+    },
+    {
+      "kicker": "Weekly review",
+      "title": "Friday, on paper.",
+      "text": "A printable summary of what moved, what stalled and what you can drop next week."
+    }
+  ],
+  "features": [
+    {
+      "id": "morning-page",
+      "kicker": "The morning page",
+      "title": "Everything that matters today, and *nothing* else.",
+      "text": "Quietly reads your calendar and inbox overnight, sorts by what needs you, and sets the rest aside in a tray you can open whenever you like.",
+      "figure": {
+        "type": "window",
+        "title": "Tuesday, 21 October",
+        "subtitle": "3 meetings · 2 replies · 1 focus block",
+        "sidebar": ["Today", "Tray · 14", "This week", "Review", "Settings"],
+        "rows": [
+          {
+            "meta": "09:30",
+            "label": "Design review with Mara",
+            "tag": "30 min"
+          },
+          {
+            "meta": "10:00",
+            "label": "Focus: pricing page draft",
+            "tag": "Protected",
+            "fill": true
+          },
+          {
+            "meta": "13:00",
+            "label": "Reply to Lars about the contract",
+            "tag": "Needs you"
+          },
+          { "meta": "15:30", "label": "Weekly sync", "tag": "45 min" },
+          { "label": "11 emails can wait until Thursday", "tag": "Tray" }
+        ],
+        "caption": "A morning page from the beta, with names changed."
+      }
+    },
+    {
+      "id": "manifesto",
+      "kicker": "Manifesto",
+      "title": "Fewer pings. Longer mornings.",
+      "text": "Most tools compete for your attention. Quietly is built to give it back: it has no badges, no streaks and no red dots, and it never sends a notification you didn’t ask for.\n\nWhen something truly can’t wait, it reaches you once, in plain words, and then leaves you alone.",
+      "points": [
+        "No unread counts, anywhere in the app",
+        "Quiet hours on by default, from 9 to 12",
+        "Urgent people and threads break through, nothing else",
+        "Your data stays yours: export everything as plain text"
+      ]
+    },
+    {
+      "kicker": "In the beta",
+      "title": "What changed for the first readers.",
+      "text": "We asked the first 140 beta readers to keep a time diary for two weeks before and after switching. These are the medians.",
+      "figure": {
+        "type": "stats",
+        "items": [
+          { "value": "90 s", "label": "to read the morning page" },
+          { "value": "−41%", "label": "notifications seen per day" },
+          { "value": "2.4 h", "label": "of unbroken focus before lunch" },
+          { "value": "4 of 5", "label": "kept using it after the trial" }
+        ],
+        "caption": "Time diaries from 140 beta readers, September 2026."
+      }
+    }
+  ],
+  "quote": {
+    "text": "The first tool in years that made my week feel smaller instead of bigger.",
+    "cite": "Early reader, design lead"
+  },
+  "faq": {
+    "title": "Before you ask",
+    "items": [
+      {
+        "q": "Which calendars and inboxes does it work with?",
+        "a": "Google Calendar, Gmail, Outlook and any IMAP inbox in the beta. iCloud is next."
+      },
+      {
+        "q": "Does Quietly read my email?",
+        "a": "Only on your device. Sorting happens in the app; the server only ever sees the times of your meetings, never their contents or your messages."
+      },
+      {
+        "q": "What will it cost?",
+        "a": "Free during the beta. After that, $6 a month or $60 a year, and beta readers keep half price for life."
+      },
+      {
+        "q": "When do invites go out?",
+        "a": "Every Monday, in the order people joined the list. You’ll get one email with your invite, and nothing before it."
+      }
+    ]
+  },
+  "closing": {
+    "kicker": "Private beta",
+    "title": "Make next week *quieter*.",
+    "text": "Join the list and we’ll send one email when your invite is ready."
+  },
+  "footer": {
+    "items": [
+      "Quietly © 2026",
+      "Made slowly in Lisbon",
+      "hello@quietly.example"
+    ],
+    "links": [
+      { "label": "Privacy", "href": "/privacy" },
+      { "label": "Press kit", "href": "/press" }
+    ]
+  },
+  "meta": {
+    "title": "Quietly: quiet software for loud weeks",
+    "description": "Quietly folds your calendar, inbox and to-dos into one calm page each morning. Join the private beta.",
+    "url": "https://quietly.example/"
+  }
+}

@@ -1,0 +1,415 @@
+<!doctype html>
+<html
+  lang="en"
+  data-composition-variables='[
+      {"id":"line1","type":"string","label":"First word","default":"Ship","maxLength":10},
+      {"id":"line2","type":"string","label":"Second word (outlined, then filled)","default":"it","maxLength":6},
+      {"id":"line3","type":"string","label":"Payoff line","default":"today.","maxLength":12},
+      {"id":"chip","type":"string","label":"Chip, top right","default":"v2.0 · Out now","maxLength":24},
+      {"id":"metaLeft","type":"string","label":"Footer, left","default":"Release notes · 14 fixes · 3 new features","maxLength":60},
+      {"id":"metaRight","type":"string","label":"Footer, right","default":"relay.example/changelog","maxLength":40},
+      {"id":"ground","type":"color","label":"Background","default":"#0f1013"},
+      {"id":"ink","type":"color","label":"Text","default":"#f5f4ef"},
+      {"id":"accent","type":"color","label":"Accent","default":"#ff5b2e"}
+    ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Kinetic Title Drop</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #0f1013;
+        --ink: #f5f4ef;
+        --accent: #ff5b2e;
+        --display: 'League Gothic', 'Oswald', sans-serif;
+        --mono: 'JetBrains Mono', monospace;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      /* The runtime writes variable values onto #root, so colours are read here, not on :root. */
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: var(--ground);
+        color: var(--ink);
+        font-family: var(--display);
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+      }
+      .clip > span {
+        position: absolute;
+        display: block;
+      }
+      #slash {
+        left: 285px;
+        top: 538px;
+        width: 1350px;
+        height: 6px;
+        background: var(--accent);
+      }
+      .word {
+        line-height: 0.82;
+        text-transform: uppercase;
+        white-space: nowrap;
+        letter-spacing: 0.005em;
+      }
+      #w1 {
+        left: 150px;
+        top: 130px;
+        transform-origin: 0% 50%;
+      }
+      /* Outlined: the fill is the ground colour, so it reads as hollow. */
+      #w2 {
+        top: 130px;
+        color: var(--ground);
+        -webkit-text-stroke: 7px var(--accent);
+      }
+      #w3 {
+        left: 140px;
+        top: 482px;
+      }
+      #bar {
+        left: 128px;
+        top: 700px;
+        height: 168px;
+        background: var(--accent);
+        transform-origin: 0% 50%;
+      }
+      #chip {
+        right: 165px;
+        top: 180px;
+        padding: 18px 28px;
+        border: 3px solid var(--accent);
+        border-radius: 999px;
+        color: var(--accent);
+        font: 600 30px/1 var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      #meta {
+        left: 180px;
+        right: 180px;
+        bottom: 70px;
+        display: flex;
+        justify-content: space-between;
+        font: 500 28px/1 var(--mono);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: color-mix(in srgb, var(--ink) 62%, var(--ground));
+        white-space: nowrap;
+      }
+      #meta span {
+        position: static;
+      }
+      .corner {
+        width: 38px;
+        height: 38px;
+        border: 3px solid color-mix(in srgb, var(--ink) 22%, var(--ground));
+      }
+      #c1 {
+        top: 54px;
+        left: 60px;
+        border-right: 0;
+        border-bottom: 0;
+      }
+      #c2 {
+        top: 54px;
+        right: 60px;
+        border-left: 0;
+        border-bottom: 0;
+      }
+      /* Quiet texture: a fixed SVG noise and a vignette. Neither moves. */
+      .vignette {
+        inset: 0;
+        background: radial-gradient(
+          120% 90% at 50% 45%,
+          transparent 55%,
+          rgba(0, 0, 0, 0.45)
+        );
+      }
+      .grain {
+        inset: 0;
+        opacity: 0.12;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="6"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- One row per element in the HyperFrames timeline. GSAP moves the inner
+           span; the outer .clip only says when the element is on screen. -->
+      <div
+        id="slash-clip"
+        class="clip"
+        data-start="0"
+        data-duration="0.6"
+        data-track-index="0"
+      >
+        <span id="slash"></span>
+      </div>
+      <div
+        id="w1-clip"
+        class="clip"
+        data-start="0"
+        data-duration="6"
+        data-track-index="1"
+      >
+        <span class="word" id="w1" data-var-text="line1">Ship</span>
+      </div>
+      <div
+        id="w2-clip"
+        class="clip"
+        data-start="1.3"
+        data-duration="4.7"
+        data-track-index="2"
+      >
+        <span class="word" id="w2" data-var-text="line2">it</span>
+      </div>
+      <div
+        id="bar-clip"
+        class="clip"
+        data-start="2.55"
+        data-duration="3.45"
+        data-track-index="3"
+      >
+        <span id="bar"></span>
+      </div>
+      <div
+        id="w3-clip"
+        class="clip"
+        data-start="2"
+        data-duration="4"
+        data-track-index="4"
+      >
+        <span class="word" id="w3" data-var-text="line3">today.</span>
+      </div>
+      <div
+        id="chip-clip"
+        class="clip"
+        data-start="3.05"
+        data-duration="2.95"
+        data-track-index="5"
+      >
+        <span id="chip" data-var-text="chip">v2.0 · Out now</span>
+      </div>
+      <div
+        id="meta-clip"
+        class="clip"
+        data-start="3.15"
+        data-duration="2.85"
+        data-track-index="6"
+      >
+        <span id="meta"
+          ><span id="meta-left" data-var-text="metaLeft"
+            >Release notes · 14 fixes · 3 new features</span
+          ><span id="meta-right" data-var-text="metaRight"
+            >relay.example/changelog</span
+          ></span
+        >
+      </div>
+      <div
+        id="frame-clip"
+        class="clip"
+        data-start="0"
+        data-duration="6"
+        data-track-index="7"
+        data-layout-ignore
+      >
+        <span id="c1" class="corner"></span><span id="c2" class="corner"></span
+        ><span class="vignette"></span><span class="grain"></span>
+      </div>
+    </div>
+    <script>
+      ;(function () {
+        var vars =
+          window.__hyperframes && window.__hyperframes.getVariables
+            ? window.__hyperframes.getVariables()
+            : {}
+        function text(id, key, fallback) {
+          var value = vars[key] == null ? fallback : String(vars[key]).trim()
+          document.getElementById(id).textContent = value || fallback
+          return value || fallback
+        }
+        var l1 = text('w1', 'line1', 'Ship')
+        var l2 = text('w2', 'line2', 'it')
+        var l3 = text('w3', 'line3', 'today.')
+        text('chip', 'chip', 'v2.0 · Out now')
+        text(
+          'meta-left',
+          'metaLeft',
+          'Release notes · 14 fixes · 3 new features',
+        )
+        text('meta-right', 'metaRight', 'relay.example/changelog')
+        // GSAP needs real colours to tween between, not var() references.
+        var css = getComputedStyle(document.documentElement)
+        var ground = String(
+          vars.ground || css.getPropertyValue('--ground'),
+        ).trim()
+        var accent = String(
+          vars.accent || css.getPropertyValue('--accent'),
+        ).trim()
+
+        // Light grounds get a lighter vignette so the corners do not go grey.
+        var hex = ground.replace('#', '')
+        if (hex.length === 3) hex = hex.replace(/(.)/g, '$1$1')
+        var lum =
+          (parseInt(hex.slice(0, 2), 16) * 0.299 +
+            parseInt(hex.slice(2, 4), 16) * 0.587 +
+            parseInt(hex.slice(4, 6), 16) * 0.114) /
+          255
+        document.querySelector('.vignette').style.opacity =
+          lum > 0.5 ? '0.25' : '1'
+
+        var w1 = document.getElementById('w1')
+        var w2 = document.getElementById('w2')
+        var w3 = document.getElementById('w3')
+        var bar = document.getElementById('bar')
+
+        // Fit the words to the frame by measuring them in the real font, so any
+        // copy fills the same space: the first row spans up to 1180 px, the
+        // payoff line up to 1640 px.
+        function fit(el, width, max) {
+          el.style.fontSize = '100px'
+          var size = Math.min(
+            max,
+            Math.floor((100 * width) / Math.max(el.offsetWidth, 1)),
+          )
+          el.style.fontSize = size + 'px'
+          return size
+        }
+        function layout() {
+          w1.style.fontSize = w2.style.fontSize = '100px'
+          var pair = w1.offsetWidth + w2.offsetWidth + 40
+          var row1 = Math.min(360, Math.floor((100 * 1180) / Math.max(pair, 1)))
+          w1.style.fontSize = w2.style.fontSize = row1 + 'px'
+          w2.style.left = 150 + w1.offsetWidth + Math.round(row1 * 0.14) + 'px'
+          var row3 = fit(w3, 1640, 520)
+          w3.style.top = 150 + Math.round(row1 * 0.86) + 40 + 'px'
+          bar.style.width = w3.offsetWidth + 70 + 'px'
+          bar.style.height = Math.round(row3 * 0.34) + 'px'
+          bar.style.top =
+            150 + Math.round(row1 * 0.86) + 40 + Math.round(row3 * 0.42) + 'px'
+        }
+
+        function build() {
+          layout()
+          var tl = gsap.timeline({ paused: true })
+          // 0.0 – the film opens on the first word, huge and centred, so frame 0
+          // is already a usable thumbnail. A hairline slashes through it.
+          tl.fromTo(
+            '#w1',
+            { x: 420, y: 230, scale: 1.5 },
+            { x: 420, y: 230, scale: 1.5, duration: 0.01 },
+            0,
+          )
+          tl.fromTo(
+            '#slash',
+            { scaleX: 0.1 },
+            { scaleX: 1, duration: 0.36, ease: 'expo.out' },
+            0,
+          )
+          tl.to('#slash', { opacity: 0, duration: 0.12, ease: 'none' }, 0.42)
+          // 0.8 – it settles into the top-left to make room.
+          tl.to(
+            '#w1',
+            { x: 0, y: 0, scale: 1, duration: 0.55, ease: 'power3.inOut' },
+            0.8,
+          )
+          // 1.35 – the second word drops in as an outline, then fills with the accent.
+          tl.fromTo(
+            '#w2',
+            { opacity: 0, y: -260, rotation: -9 },
+            {
+              opacity: 1,
+              y: 0,
+              rotation: 0,
+              duration: 0.42,
+              ease: 'back.out(1.6)',
+            },
+            1.35,
+          )
+          tl.fromTo(
+            '#w2',
+            { color: ground },
+            { color: accent, duration: 0.16, ease: 'none' },
+            1.9,
+          )
+          // 2.05 – the payoff whips in from the right with a smear; the bar wipes under it.
+          tl.fromTo(
+            '#w3',
+            { opacity: 0, x: 1400, skewX: -18, filter: 'blur(14px)' },
+            {
+              opacity: 1,
+              x: 0,
+              skewX: 0,
+              filter: 'blur(0px)',
+              duration: 0.5,
+              ease: 'expo.out',
+            },
+            2.05,
+          )
+          tl.fromTo(
+            '#bar',
+            { scaleX: 0 },
+            { scaleX: 1, duration: 0.45, ease: 'power4.inOut' },
+            2.6,
+          )
+          // 3.1 – details arrive last and quietly, then hold long enough to read.
+          tl.fromTo(
+            '#chip',
+            { opacity: 0, y: 18 },
+            { opacity: 1, y: 0, duration: 0.35, ease: 'power3.out' },
+            3.1,
+          )
+          tl.fromTo(
+            ['#meta', '#c1', '#c2'],
+            { opacity: 0 },
+            { opacity: 1, duration: 0.3, ease: 'none', stagger: 0.06 },
+            3.2,
+          )
+          // 5.45 – one clean exit, shorter than the entrances.
+          tl.to(
+            ['#w1', '#w2', '#bar', '#w3', '#chip', '#meta', '#c1', '#c2'],
+            {
+              opacity: 0,
+              y: -26,
+              filter: 'blur(6px)',
+              duration: 0.22,
+              ease: 'power2.in',
+              stagger: 0.025,
+            },
+            5.45,
+          )
+          window.__timelines['main'] = tl
+        }
+        // Measure only once the display font is in, then register the timeline.
+        if (document.fonts && document.fonts.ready)
+          document.fonts.ready.then(build)
+        else build()
+      })()
+    </script>
+  </body>
+</html>

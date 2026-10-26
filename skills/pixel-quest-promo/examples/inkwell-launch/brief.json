@@ -1,0 +1,22 @@
+{
+  "product": "INKWELL",
+  "subtitle": "A NOTES APP QUEST",
+  "cta": "PRESS START",
+  "hero": "robot",
+  "level1Name": "QUICK CAPTURE",
+  "level1Text": "NOTES SAVE AS YOU TYPE",
+  "level1Item": "bolt",
+  "level2Name": "FAST SEARCH",
+  "level2Text": "FIND ANY NOTE IN 0.1 S",
+  "level2Item": "gem",
+  "level3Name": "PRIVATE VAULT",
+  "level3Text": "END-TO-END ENCRYPTED",
+  "level3Item": "shield",
+  "headline": "LEVEL UP",
+  "subline": "YOUR NOTES",
+  "url": "INKWELL.EXAMPLE",
+  "sky": "#1b1446",
+  "ink": "#f4f1ff",
+  "accent": "#3fb950",
+  "grass": "#2c8c3c"
+}

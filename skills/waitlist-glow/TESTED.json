@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-26",
+  "checks": [
+    "node scripts/build.mjs examples/soon/waitlist.json out/soon",
+    "node scripts/check.mjs out/soon/index.html",
+    "node scripts/build.mjs examples/loam/waitlist.json out/loam",
+    "node scripts/check.mjs out/loam/index.html"
+  ],
+  "agents": []
+}

@@ -1,0 +1,124 @@
+{
+  "brand": { "name": "Galley", "href": "/" },
+  "nav": [
+    { "label": "How it works", "href": "#how-it-works" },
+    { "label": "Themes", "href": "#themes" },
+    { "label": "Questions", "href": "#faq" },
+    { "label": "GitHub", "href": "https://github.com/you/galley" }
+  ],
+  "action": { "label": "Install", "href": "#get-started" },
+  "issue": ["Open source · MIT", "PDF · EPUB · PDF/X", "Version 1.4.0"],
+  "hero": {
+    "title": "Books, set *properly*, from Markdown.",
+    "lede": "Galley turns a folder of Markdown chapters into a typeset PDF and an EPUB, with real page layout: running heads, no widows or orphans, footnotes at the foot of the page and a contents page with page numbers. It runs on your machine and needs no LaTeX.",
+    "actions": {
+      "primary": { "label": "Get started", "href": "#get-started" },
+      "secondary": {
+        "label": "Read the source",
+        "href": "https://github.com/you/galley"
+      }
+    },
+    "note": "MIT licensed. Node.js 20 or newer."
+  },
+  "columns": [
+    {
+      "kicker": "Structure",
+      "title": "Your folders are the book.",
+      "text": "Parts, chapters, front matter and appendices come from how you name your files. No config to keep in sync."
+    },
+    {
+      "kicker": "Typesetting",
+      "title": "Set like a printed page.",
+      "text": "Whole-paragraph line breaking, hanging punctuation, and widows and orphans kept apart."
+    },
+    {
+      "kicker": "Footnotes",
+      "title": "Notes where they belong.",
+      "text": "At the foot of the page they’re on, numbered per chapter, carried over to the next page when they’re long."
+    },
+    {
+      "kicker": "Output",
+      "title": "One source, two books.",
+      "text": "PDF/X for printers and print-on-demand, EPUB 3 for e-readers, from the same chapters."
+    }
+  ],
+  "features": [
+    {
+      "id": "get-started",
+      "kicker": "Get started",
+      "title": "From folder to *finished book* in four commands.",
+      "text": "Install Galley once, start a book, and build it. `galley watch` keeps a preview open and rebuilds it every time you save a chapter.",
+      "figure": {
+        "type": "code",
+        "title": "Terminal",
+        "code": "$ npm install -g galley-press\n\n$ galley new field-notes\n$ cd field-notes\n$ galley build    # → dist/field-notes.pdf and .epub\n$ galley watch    # rebuilds the preview on every save",
+        "caption": "The quick start from the README."
+      }
+    },
+    {
+      "id": "how-it-works",
+      "kicker": "How it works",
+      "title": "No page starts or ends with a stranded line.",
+      "text": "Galley sets every paragraph with a line breaker that looks at the whole paragraph at once, then fills pages from the top, moving lines between pages until every page is clean.\n\nBuilds are cached per chapter, so changing one chapter of a 400-page book rebuilds in under a second.",
+      "figure": {
+        "type": "image",
+        "src": "spread.svg",
+        "alt": "An open book spread: a full page of justified text on the left, and on the right the opening of chapter three, “The Low Tide”, with a drop cap.",
+        "caption": "A chapter opening in the classic theme."
+      }
+    },
+    {
+      "id": "themes",
+      "kicker": "Themes",
+      "title": "Three looks to start from.",
+      "text": "Each theme is one CSS file you can copy and change: page size, margins, fonts, running heads and how chapters open.",
+      "points": [
+        "`classic`: a novel, set in Newsreader on a 5 × 8 in page",
+        "`essay`: long-form non-fiction with wide margins for notes",
+        "`manual`: technical books with code blocks and numbered figures"
+      ]
+    }
+  ],
+  "faq": {
+    "title": "Common questions",
+    "items": [
+      {
+        "q": "Do I need LaTeX?",
+        "a": "No. Galley has its own layout engine, written in TypeScript, and ships its fonts."
+      },
+      {
+        "q": "Can I send the PDF to a printer?",
+        "a": "Yes. `galley build --pdfx` writes PDF/X-1a with bleed and crop marks, which print-on-demand services accept."
+      },
+      {
+        "q": "Does it handle Chinese, Japanese and Korean?",
+        "a": "Yes, with line breaking rules for each. Vertical text is not supported yet."
+      }
+    ]
+  },
+  "closing": {
+    "kicker": "Get started",
+    "title": "Your next book, *typeset* tonight.",
+    "text": "Install Galley, point it at your chapters and read the proof in the morning."
+  },
+  "footer": {
+    "items": ["Galley © 2026", "MIT licence", "Made by its contributors"],
+    "links": [
+      { "label": "Source", "href": "https://github.com/you/galley" },
+      {
+        "label": "Contributing",
+        "href": "https://github.com/you/galley/blob/main/CONTRIBUTING.md"
+      }
+    ]
+  },
+  "theme": {
+    "paper": "#141412",
+    "ink": "#eeeae0",
+    "accent": "#f0a35e"
+  },
+  "meta": {
+    "title": "Galley: print-ready books from plain Markdown",
+    "description": "Galley turns a folder of Markdown chapters into a typeset PDF and EPUB, with running heads, footnotes and no widows or orphans. No LaTeX needed.",
+    "url": "https://galley.example/"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-26",
+  "checks": [
+    "node scripts/build.mjs examples/studio-nord/deck.json out/studio-nord",
+    "node scripts/build.mjs examples/field-report/deck.json out/field-report"
+  ],
+  "agents": []
+}

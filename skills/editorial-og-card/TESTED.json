@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-26",
+  "checks": [
+    "node scripts/render.mjs out/field-notes/cards.json --scale=2",
+    "node scripts/render.mjs out/night-desk/cards.json --scale=2"
+  ],
+  "agents": []
+}

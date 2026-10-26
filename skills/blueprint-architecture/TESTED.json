@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-26",
+  "checks": [
+    "node scripts/build.mjs examples/order-service/diagram.json out/order-service",
+    "node scripts/export-png.mjs out/order-service/index.html",
+    "node scripts/build.mjs examples/rag-pipeline/diagram.json out/rag-pipeline",
+    "node scripts/export-png.mjs out/rag-pipeline/index.html"
+  ],
+  "agents": []
+}
