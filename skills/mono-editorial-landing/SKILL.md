@@ -1,6 +1,7 @@
 ---
 name: mono-editorial-landing
 description: Build a black-and-white editorial landing page - a large serif headline, a drop-cap introduction, numbered ruled columns, feature spreads with framed figures (screenshots, an app window drawn in HTML, true numbers or terminal commands), a pull quote, questions and a closing line - as one responsive HTML file, drafted from the project's README, with a waitlist form that really signs people up or buttons to get started. Checks layout, contrast and accessibility in headless Chrome. Use when someone wants a landing page, product homepage, launch page or waitlist page that looks like a magazine rather than a SaaS template.
+license: MIT
 ---
 
 # Mono Editorial Landing

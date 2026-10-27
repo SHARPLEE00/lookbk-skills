@@ -1,6 +1,7 @@
 ---
 name: kinetic-title-drop
 description: Make a 6-second 1080p kinetic-type title video (MP4) from three short lines, a chip, a footer and three colours. Use for launch openers, release announcements, social posts and reel intros when someone asks for an animated title, title drop, kinetic typography or a short type-only video.
+license: MIT
 ---
 
 # Kinetic Title Drop
@@ -152,7 +153,7 @@ npx --yes hyperframes@0.8.192 render --batch variants.json --quality delivery -o
 ## Troubleshooting
 
 - **Render hangs, then shows a static frame, or reports `sub_timeline_script_failure`.** GSAP didn't load. If your network blocks `cdn.jsdelivr.net`, run `npm i gsap@3.14.2` in the project, copy `node_modules/gsap/dist/gsap.min.js` to `assets/vendor/`, and point the `<script src>` in `index.html` at `assets/vendor/gsap.min.js`.
-- **Words look like the wrong font.** The template uses League Gothic and JetBrains Mono, which HyperFrames bundles. If you swap fonts, use another bundled family (`npx hyperframes docs compositions` lists them) or add an `@font-face`, or `check` fails.
+- **Words look like the wrong font.** The template uses League Gothic and JetBrains Mono, which HyperFrames bundles. If you swap fonts, use another bundled family (`npx --yes hyperframes@0.8.192 docs compositions` lists them) or add an `@font-face`, or `check` fails.
 - **Colours didn't change.** Run `apply-brief` from step 3 again and check it printed `Applied N values`. Editing the CSS `:root` colours has no effect; the variables win.
 - **Want a different length?** Keep it at 6 s. The beats are timed to land in that window; stretching the root duration only lengthens the hold.
 

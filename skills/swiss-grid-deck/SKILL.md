@@ -1,6 +1,7 @@
 ---
 name: swiss-grid-deck
 description: Build a presentation in the Swiss grid style (eight-column grid, huge tight type, one accent colour) from an outline or notes, as an HTML deck that presents in the browser, a PDF, and an editable PowerPoint file (PPTX) with speaker notes. Use when someone wants slides, a deck, a pitch, a talk, a report presentation or a keynote that looks designed rather than templated.
+license: MIT
 ---
 
 # Swiss Grid Deck

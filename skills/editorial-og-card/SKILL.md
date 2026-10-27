@@ -1,6 +1,7 @@
 ---
 name: editorial-og-card
 description: Make 1200×630 link-preview images (Open Graph / social cards, PNG) for blog posts, docs or newsletters in one editorial look - a serif headline set as real text, a byline and a generated block composition - from Markdown front matter or a list, and wire them into the site's meta tags. Use when someone wants OG images, social cards, link previews or Twitter/X cards for their posts.
+license: MIT
 ---
 
 # Editorial OG Card

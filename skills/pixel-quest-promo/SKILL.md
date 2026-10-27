@@ -1,6 +1,7 @@
 ---
 name: pixel-quest-promo
 description: Make a 20-second 1080p retro 8-bit promo video (MP4) for a product, app, game or side project - a title screen with a blinking "PRESS START", three short platformer stages where a pixel hero collects coins and knocks a power-up out of a block (one stage per feature, with its name and a line of text), a running score and coin counter, and an ending with the headline and link. Everything lands on a 120 BPM beat grid, and the skill writes a cue sheet for adding chiptune music. Use when someone wants a pixel-art, 8-bit, retro game or arcade-style promo, launch teaser or feature reel.
+license: MIT
 ---
 
 # Pixel Quest Promo

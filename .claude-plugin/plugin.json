@@ -1,0 +1,20 @@
+{
+  "name": "lookbk",
+  "displayName": "Lookbk free skills",
+  "version": "1.1.0",
+  "description": "Seven free visual skills from Lookbk: a kinetic title video, an 8-bit promo video, a Swiss-grid slide deck, link-preview images, a blueprint architecture diagram and two landing pages. Each renders on your machine with Node.js, Chrome or FFmpeg; none calls an AI model or needs an API key.",
+  "author": {
+    "name": "Lookbk",
+    "email": "support@lookbk.dev",
+    "url": "https://lookbk.dev"
+  },
+  "homepage": "https://lookbk.dev/skills",
+  "repository": "https://github.com/SHARPLEE00/lookbk-skills",
+  "license": "MIT",
+  "keywords": ["video", "slides", "presentation", "og-image", "architecture-diagram", "landing-page", "waitlist", "hyperframes", "design"],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://github.com/SHARPLEE00/lookbk-skills#readme",
+  "supportUrl": "https://github.com/SHARPLEE00/lookbk-skills/issues",
+  "privacyPolicyUrl": "https://lookbk.dev/privacy",
+  "termsOfServiceUrl": "https://lookbk.dev/terms"
+}

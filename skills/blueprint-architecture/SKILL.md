@@ -1,6 +1,7 @@
 ---
 name: blueprint-architecture
 description: Draw a system architecture diagram in a technical-drawing blueprint style - services, databases, queues, caches and clients laid out automatically, with labelled request and event flows and moving data-flow dots - from a description or by reading a repository. Outputs an HTML page, an SVG and a PNG. Use when someone wants an architecture diagram, a system design drawing, a service map or a data-flow diagram.
+license: MIT
 ---
 
 # Blueprint Architecture Diagram

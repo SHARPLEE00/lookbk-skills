@@ -1,6 +1,7 @@
 ---
 name: waitlist-glow
 description: Make a one-screen waitlist or coming-soon page - a slowly breathing gradient glow, a serif headline, one email field that really signs people up (Formspree, Netlify Forms, Buttondown, Mailchimp or your own endpoint), an optional live countdown to launch - as a single HTML file, and test the sign-up end to end before it goes live. Use when someone wants a waitlist, coming-soon, pre-launch or early-access page.
+license: MIT
 ---
 
 # Waitlist Glow

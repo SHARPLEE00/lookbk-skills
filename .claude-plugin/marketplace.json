@@ -1,0 +1,102 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "lookbk-skills",
+  "description": "Free visual agent skills from Lookbk (lookbk.dev): videos, slides, images and web pages your agent renders on your machine.",
+  "owner": {
+    "name": "Lookbk",
+    "email": "support@lookbk.dev",
+    "url": "https://lookbk.dev"
+  },
+  "plugins": [
+    {
+      "name": "lookbk",
+      "source": "./",
+      "description": "All seven free Lookbk skills in one plugin: two videos, a slide deck, link-preview images, an architecture diagram and two landing pages.",
+      "category": "design",
+      "tags": [
+        "video",
+        "slides",
+        "images",
+        "landing-page",
+        "diagram"
+      ]
+    },
+    {
+      "name": "kinetic-title-drop",
+      "source": "./skills/kinetic-title-drop",
+      "description": "A 6-second 1080p kinetic-type title video (MP4) from three short lines and three colours. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "video"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/kinetic-title-drop"
+    },
+    {
+      "name": "pixel-quest-promo",
+      "source": "./skills/pixel-quest-promo",
+      "description": "A 20-second 1080p 8-bit promo video (MP4): a pixel hero runs one stage per feature on a 120 BPM grid. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "video"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/pixel-quest-promo"
+    },
+    {
+      "name": "swiss-grid-deck",
+      "source": "./skills/swiss-grid-deck",
+      "description": "A Swiss-grid slide deck from your notes: browser deck, PDF and editable PPTX with speaker notes. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "slides"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/swiss-grid-deck"
+    },
+    {
+      "name": "editorial-og-card",
+      "source": "./skills/editorial-og-card",
+      "description": "1200x630 link-preview images (PNG) for every post, with the meta tags wired up. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "images"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/editorial-og-card"
+    },
+    {
+      "name": "blueprint-architecture",
+      "source": "./skills/blueprint-architecture",
+      "description": "A blueprint-style system architecture diagram from a description or a repository, as HTML, SVG and PNG. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "images"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/blueprint-architecture"
+    },
+    {
+      "name": "mono-editorial-landing",
+      "source": "./skills/mono-editorial-landing",
+      "description": "A black-and-white editorial landing page drafted from your README, with a working waitlist form. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/mono-editorial-landing"
+    },
+    {
+      "name": "waitlist-glow",
+      "source": "./skills/waitlist-glow",
+      "description": "A one-screen waitlist page with a breathing glow and a sign-up form tested end to end. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/waitlist-glow"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Video",
+      "description": "1080p MP4s rendered with HyperFrames on your machine.",
+      "skills": ["kinetic-title-drop", "pixel-quest-promo"]
+    },
+    {
+      "title": "Slides and images",
+      "description": "A slide deck with PDF and PPTX export, link-preview cards and an architecture diagram.",
+      "skills": ["swiss-grid-deck", "editorial-og-card", "blueprint-architecture"]
+    },
+    {
+      "title": "Web pages",
+      "description": "Single-file landing and waitlist pages with sign-up forms tested in Chrome.",
+      "skills": ["mono-editorial-landing", "waitlist-glow"]
+    }
+  ]
+}
