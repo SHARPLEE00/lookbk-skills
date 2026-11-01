@@ -165,7 +165,7 @@ Each skill's own `SKILL.md` lists exactly what it needs and the steps your agent
 
 ## More skills
 
-These seven are the free part of a catalog of 58 skills at [lookbk.dev](https://lookbk.dev/skills?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), as of October 2026. One more free skill, [Roller Diner Hero](https://lookbk.dev/skills/roller-diner-hero?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), installs from lookbk.dev with a free account. [Lookbk Pro](https://lookbk.dev/pricing?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more) adds the other 50, including:
+These seven are the free part of a catalog of 98 skills at [lookbk.dev](https://lookbk.dev/skills?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), as of November 2026. One more free skill, [Roller Diner Hero](https://lookbk.dev/skills/roller-diner-hero?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), installs from lookbk.dev with a free account. [Lookbk Pro](https://lookbk.dev/pricing?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more) adds the other 90, including:
 
 - **Launch films** made from your site and real screens, cut on a beat grid ([Launch Films](https://lookbk.dev/skills/series/launch-films?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more))
 - **Animated website heroes** in WebGL, canvas and scroll, with a paste-in embed and a 1080p video ([Motion Heroes](https://lookbk.dev/skills/series/motion-heroes?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more))
