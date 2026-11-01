@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-30",
+  "checks": [
+    "node scripts/build.mjs examples/paperwind/hero.json out/paperwind",
+    "node scripts/check.mjs out/paperwind/index.html",
+    "node scripts/build.mjs examples/halden/hero.json out/halden",
+    "node scripts/check.mjs out/halden/index.html",
+    "node scripts/record.mjs out/paperwind/index.html --seconds 10 --size 1920x1080 --fps 30 --poster 3.5",
+    "node scripts/record.mjs out/halden/index.html --still 3.5 --size 1920x1080 --png out/second.png",
+    "node scripts/record.mjs out/paperwind/index.html --still 3.5 --size 390x844 --scale 2 --png out/phone.png",
+    "node scripts/record.mjs out/halden/index.html --seconds 10 --size 1920x1080 --fps 30 --poster 3.5",
+    "node scripts/record.mjs out/halden/index.html --still 3.5 --size 390x844 --scale 2 --png out/halden-phone.png"
+  ],
+  "agents": []
+}

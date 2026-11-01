@@ -1,6 +1,6 @@
 # Lookbk free skills
 
-Seven free agent skills from [Lookbk](https://lookbk.dev/?utm_source=github&utm_medium=repo&utm_campaign=free-skills-readme) that make visual work: a kinetic title video, an 8-bit promo, a slide deck, link-preview images, an architecture diagram and two landing pages. Each one is a folder with a `SKILL.md` that Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, OpenCode and other agents can follow, plus the scripts and templates it runs.
+Eight free agent skills from [Lookbk](https://lookbk.dev/?utm_source=github&utm_medium=repo&utm_campaign=free-skills-readme) that make visual work: a kinetic title video, an 8-bit promo, a slide deck, link-preview images, an architecture diagram, two landing pages and a hero section visitors can grab and drag. Each one is a folder with a `SKILL.md` that Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, OpenCode and other agents can follow, plus the scripts and templates it runs.
 
 Every picture below was rendered by the skill itself. The skills run on your own machine: none of them calls an AI model or asks for an API key.
 
@@ -9,7 +9,7 @@ Every picture below was rendered by the skill itself. The skills run on your own
 | [![Kinetic Title Drop](assets/kinetic-title-drop.gif)](#kinetic-title-drop) | [![Pixel Quest Promo](assets/pixel-quest-promo.gif)](#pixel-quest-promo) |
 | [![Swiss Grid Deck](assets/swiss-grid-deck.gif)](#swiss-grid-deck) | [![Editorial OG Card](assets/editorial-og-card.gif)](#editorial-og-card) |
 | [![Blueprint Architecture Diagram](assets/blueprint-architecture.gif)](#blueprint-architecture-diagram) | [![Mono Editorial Landing](assets/mono-editorial-landing.gif)](#mono-editorial-landing) |
-| [![Waitlist Glow](assets/waitlist-glow.gif)](#waitlist-glow) | |
+| [![Waitlist Glow](assets/waitlist-glow.gif)](#waitlist-glow) | [![Washing Line Hero](assets/washing-line-hero.gif)](#washing-line-hero) |
 
 ## Install
 
@@ -19,7 +19,7 @@ Every picture below was rendered by the skill itself. The skills run on your own
 npx skills add SHARPLEE00/lookbk-skills
 ```
 
-It lists the seven skills, asks which ones and which agents to install them for, and copies them into each agent's skills folder. Add `-g` to install for every project instead of the current one. To skip the questions:
+It lists the eight skills, asks which ones and which agents to install them for, and copies them into each agent's skills folder. Add `-g` to install for every project instead of the current one. To skip the questions:
 
 ```bash
 npx skills add SHARPLEE00/lookbk-skills --skill kinetic-title-drop -a claude-code -g -y
@@ -36,7 +36,7 @@ Inside a Claude Code session:
 /plugin install lookbk@lookbk-skills
 ```
 
-`lookbk` installs all seven skills. Their commands carry the plugin name, such as `/lookbk:kinetic-title-drop`, and Claude also uses them when you simply ask for the thing. To install one skill instead, use its name, for example `/plugin install swiss-grid-deck@lookbk-skills`. Install either the bundle or single skills, not both.
+`lookbk` installs all eight skills. Their commands carry the plugin name, such as `/lookbk:kinetic-title-drop`, and Claude also uses them when you simply ask for the thing. To install one skill instead, use its name, for example `/plugin install swiss-grid-deck@lookbk-skills`. Install either the bundle or single skills, not both.
 
 From your shell, the same steps are `claude plugin marketplace add SHARPLEE00/lookbk-skills` and `claude plugin install lookbk@lookbk-skills`. On Claude Code 2.1.275 or later, one line does both:
 
@@ -155,17 +155,27 @@ A one-screen waitlist or coming-soon page with a breathing gradient glow, one em
 - **Try:** *Make a Waitlist Glow page for soon.example that posts emails to our Formspree form, with a countdown to December 1.*
 - [`skills/waitlist-glow`](skills/waitlist-glow) · [Preview and details on lookbk.dev](https://lookbk.dev/skills/waitlist-glow?utm_source=github&utm_medium=repo&utm_campaign=free-skills-readme)
 
+### Washing Line Hero
+
+[![Washing Line Hero](assets/washing-line-hero.gif)](https://lookbk.dev/skills/washing-line-hero?utm_source=github&utm_medium=repo&utm_campaign=free-skills-readme)
+
+An interactive hero section: your poster is printed on a cotton cloth pinned to a washing line with wooden pegs, under a sky with drifting clouds. Visitors press a dent into the cloth with the pointer, grab it anywhere and pull it, with a mouse or a finger, and when they let go it swings back and settles. It is a real cloth simulation in three.js, not a video. You get one HTML page plus a paste-in embed, checked at four widths, and a 1080p MP4 in which a drawn pointer pulls the cloth.
+
+- **Needs:** Node.js 18+, Chrome, FFmpeg for the video
+- **Try:** *Build a Washing Line hero for our app launch: midday sky, the cloth printed "Light enough for the line." with our release specs, and record a 10-second video.*
+- [`skills/washing-line-hero`](skills/washing-line-hero) · [Live demo, preview and details on lookbk.dev](https://lookbk.dev/skills/washing-line-hero?utm_source=github&utm_medium=repo&utm_campaign=free-skills-readme)
+
 Each skill's own `SKILL.md` lists exactly what it needs and the steps your agent follows.
 
 ## What the skills run and fetch
 
 - **On your machine:** the Node.js scripts in each skill's `scripts/` folder; headless Chrome, Chromium or Edge (already installed) for screenshots, PDFs, PNGs and form tests; FFmpeg for the videos.
-- **Downloaded when used:** `kinetic-title-drop` and `pixel-quest-promo` run HyperFrames through `npx --yes hyperframes@0.8.192`, which downloads a headless Chrome on the first render, and load GSAP from a CDN. `swiss-grid-deck` asks you to run `npm i pptxgenjs@4.0.1` before a PowerPoint export. Pages and cards load their fonts from Google Fonts.
+- **Downloaded when used:** `kinetic-title-drop` and `pixel-quest-promo` run HyperFrames through `npx --yes hyperframes@0.8.192`, which downloads a headless Chrome on the first render, and load GSAP from a CDN. Pages built by `washing-line-hero` load three.js r180 and their fonts from jsDelivr at pinned versions with integrity hashes. `swiss-grid-deck` asks you to run `npm i pptxgenjs@4.0.1` before a PowerPoint export. Pages and cards load their fonts from Google Fonts.
 - **Sent elsewhere:** none of the skills uploads your files or collects data. The pages that `mono-editorial-landing` and `waitlist-glow` build post sign-ups to the form service you choose, once a visitor signs up on your live page. Their checks try the form against a stand-in service on your own machine.
 
 ## More skills
 
-These seven are the free part of a catalog of 98 skills at [lookbk.dev](https://lookbk.dev/skills?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), as of November 2026. One more free skill, [Roller Diner Hero](https://lookbk.dev/skills/roller-diner-hero?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), installs from lookbk.dev with a free account. [Lookbk Pro](https://lookbk.dev/pricing?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more) adds the other 90, including:
+These eight are the free part of a catalog of 98 skills at [lookbk.dev](https://lookbk.dev/skills?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), as of November 2026. One more free skill, [Roller Diner Hero](https://lookbk.dev/skills/roller-diner-hero?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), installs from lookbk.dev with a free account. [Lookbk Pro](https://lookbk.dev/pricing?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more) adds the other 90, including:
 
 - **Launch films** made from your site and real screens, cut on a beat grid ([Launch Films](https://lookbk.dev/skills/series/launch-films?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more))
 - **Animated website heroes** in WebGL, canvas and scroll, with a paste-in embed and a 1080p video ([Motion Heroes](https://lookbk.dev/skills/series/motion-heroes?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more))

@@ -1,0 +1,58 @@
+{
+  "brand": { "name": "Halden Linen", "logo": "logo.svg", "href": "/" },
+  "nav": [
+    { "label": "Bedding", "href": "/bedding" },
+    { "label": "Towels", "href": "/towels" },
+    { "label": "The mill", "href": "/mill" },
+    { "label": "Care", "href": "/care" }
+  ],
+  "action": { "label": "Shop", "href": "/shop" },
+  "hero": {
+    "badge": "Autumn weave, in stock",
+    "title": "Hang it at dusk.\n*Dry by morning.*",
+    "lede": "Stonewashed linen sheets woven at our mill in Kaunas. Linen holds a fifth of its weight in water and still feels dry, so a set dries overnight on the line.",
+    "actions": [
+      { "label": "Shop bedding", "href": "/bedding" },
+      { "label": "How we weave", "href": "/mill" }
+    ],
+    "note": "Free returns within 60 nights. Sets from €149.",
+    "align": "left"
+  },
+  "theme": {
+    "mode": "dark",
+    "background": "#1c2140",
+    "ink": "#f6efe4",
+    "accent": "#f0a46b",
+    "fonts": { "display": "Fraunces", "body": "DM Sans", "weight": 500 }
+  },
+  "effect": {
+    "seed": 41,
+    "skyTop": "#0d1128",
+    "skyBottom": "#2c2c52",
+    "clouds": 0.45,
+    "cloth": "#e9e2d6",
+    "printInk": "#2a2420",
+    "printTitle": "Halden",
+    "printLine": "Stonewashed linen, woven in Kaunas",
+    "printHeadline": "Dry by\nmorning.",
+    "printSpecs": [
+      { "label": "Weight", "value": "165 gsm" },
+      { "label": "Yarn", "value": "14 lea" },
+      { "label": "Wash", "value": "40 °C" },
+      { "label": "Sizes", "value": "4" }
+    ],
+    "printChartLabel": "Hours to dry, by month",
+    "printFoot": "halden.example",
+    "aspect": 1.25,
+    "pegs": 3,
+    "breeze": 0.55,
+    "hint": "Press it · pull it · let go"
+  },
+  "motion": { "speed": 1, "pointer": true },
+  "meta": {
+    "title": "Halden Linen: hang it at dusk, dry by morning",
+    "description": "Stonewashed linen sheets woven at our mill in Kaunas, that dry overnight on the line.",
+    "url": "https://halden.example/",
+    "lang": "en"
+  }
+}

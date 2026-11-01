@@ -1,0 +1,117 @@
+/* Motion Heroes kit: the hero section around the effect. Everything is
+   scoped under .mh; the colours and fonts come in as --mh-* variables. */
+.mh{position:relative;isolation:isolate;box-sizing:border-box;min-height:var(--mh-height,100vh);min-height:var(--mh-height,100svh);display:grid;grid-template-rows:auto 1fr;background:var(--mh-bg);color:var(--mh-ink);font-family:var(--mh-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;--mh-pad:clamp(16px,3.4vw,56px)}
+.mh *,.mh *::before,.mh *::after{box-sizing:border-box}
+.mh :where(h1,p){margin:0}
+.mh :where(a){color:inherit}
+.mh :focus-visible{outline:2px solid var(--mh-em);outline-offset:3px;border-radius:8px}
+
+/* the effect layer: the still picture first, the live canvas over it */
+.mh-stage{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.mh-still,.mh-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.mh-still svg{display:block;width:100%;height:100%}
+.mh-still-obj{position:absolute;left:var(--mh-sx,70%);top:var(--mh-sy,50%);width:var(--mh-ss,min(46vw,72vh));aspect-ratio:1;transform:translate(-50%,-50%)}
+.mh-still-obj svg{display:block;width:100%;height:100%;overflow:visible}
+.mh-canvas{opacity:0;transition:opacity .7s ease}
+.mh.mh-ready .mh-canvas{opacity:1}
+.mh.mh-ready .mh-still,.mh.mh-ready .mh-still-obj{visibility:hidden;transition:visibility 0s .7s}
+.mh.mh-fallback .mh-canvas{display:none}
+/* a soft wash of the background behind the copy, so text never sits on the effect at full strength */
+.mh-scrim{position:absolute;inset:0;--mh-at:24% 68%;background:radial-gradient(ellipse 46% 58% at var(--mh-at),color-mix(in srgb,var(--mh-bg) calc(var(--mh-scrim) * 100%),transparent) 0%,color-mix(in srgb,var(--mh-bg) calc(var(--mh-scrim) * 75%),transparent) 55%,transparent 100%)}
+.mh[data-align=right] .mh-scrim{--mh-at:76% 68%}
+.mh[data-align=center] .mh-scrim{--mh-at:50% 56%;background:radial-gradient(ellipse 52% 46% at var(--mh-at),color-mix(in srgb,var(--mh-bg) calc(var(--mh-scrim) * 100%),transparent) 0%,color-mix(in srgb,var(--mh-bg) calc(var(--mh-scrim) * 80%),transparent) 60%,transparent 100%)}
+.mh.mh-record .mh-canvas,.mh.mh-record .mh-still,.mh.mh-record .mh-still-obj{transition:none}
+
+/* top bar */
+.mh-bar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:clamp(16px,2.4vw,30px) var(--mh-pad) 0}
+.mh-brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;font-family:var(--mh-display);font-weight:600;font-size:19px;letter-spacing:-.015em;min-height:44px}
+.mh-logo{flex:none;width:26px;height:26px;display:grid;place-items:center}
+.mh-logo-svg svg{width:100%;height:100%;display:block}
+.mh-logo-dot{border-radius:50%;background:var(--mh-accent)}
+.mh-logo-text{border-radius:50%;background:var(--mh-ink);color:var(--mh-on-ink);font-size:13px;font-weight:700;letter-spacing:0}
+.mh-nav{display:flex;gap:2px;padding:5px;border-radius:999px;background:color-mix(in srgb,var(--mh-glass) 78%,transparent);border:1px solid color-mix(in srgb,var(--mh-ink) 10%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4)}
+.mh-nav a{text-decoration:none;font-size:14px;font-weight:500;padding:8px 15px;border-radius:999px;color:var(--mh-ink)}
+.mh-nav a:hover{background:color-mix(in srgb,var(--mh-ink) 8%,transparent)}
+.mh-action{display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:var(--mh-ink);color:var(--mh-on-ink);font-size:14px;font-weight:600;padding:12px 20px;border-radius:999px;white-space:nowrap}
+.mh-action i{width:7px;height:7px;border-radius:50%;background:var(--mh-accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--mh-accent) 30%,transparent)}
+
+/* body: the copy, and an optional extra the effect adds (a panel, a legend) */
+.mh-body{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:32px;padding:32px var(--mh-pad) clamp(28px,5vw,64px)}
+.mh-copy{position:relative;max-width:min(800px,46vw)}
+.mh-badge{display:inline-flex;align-items:center;gap:9px;margin-bottom:24px;padding:7px 13px 7px 11px;border-radius:999px;font-size:12.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--mh-ink);background:color-mix(in srgb,var(--mh-glass) 80%,transparent);border:1px solid color-mix(in srgb,var(--mh-ink) 12%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.mh-badge i{width:7px;height:7px;border-radius:50%;background:var(--mh-em)}
+.mh-title{font-family:var(--mh-display);font-weight:var(--mh-weight);font-size:clamp(46px,6.6vw,124px);line-height:.95;letter-spacing:-.045em;text-wrap:balance}
+.mh-title em{font-style:normal;color:var(--mh-em)}
+.mh-lede{margin-top:24px;max-width:34em;font-size:clamp(16px,1.25vw,18px);line-height:1.55;color:var(--mh-mute)}
+.mh-lede a{color:var(--mh-ink)}
+.mh-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.mh-btn{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 24px;border-radius:999px;text-decoration:none;font-size:15px;font-weight:600;white-space:nowrap}
+.mh-btn-1{background:var(--mh-ink);color:var(--mh-on-ink)}
+.mh-btn-1 .mh-arrow{transition:transform .25s ease}
+.mh-btn-1:hover .mh-arrow{transform:translateX(3px)}
+.mh-btn-2{color:var(--mh-ink);background:color-mix(in srgb,var(--mh-glass) 80%,transparent);border:1px solid color-mix(in srgb,var(--mh-ink) 16%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.mh-note{margin-top:18px;font-size:13px;color:var(--mh-mute)}
+.mh-extra{align-self:center}
+
+/* centre and right alignment */
+.mh[data-align=center] .mh-body{grid-template-columns:minmax(0,1fr);align-items:center;justify-items:center;text-align:center}
+.mh[data-align=center] .mh-copy{max-width:min(820px,100%)}
+.mh[data-align=center] .mh-lede{margin-left:auto;margin-right:auto}
+.mh[data-align=center] .mh-actions{justify-content:center}
+.mh[data-align=center] .mh-extra{display:none}
+.mh[data-align=right] .mh-body{grid-template-columns:auto minmax(0,1fr)}
+.mh[data-align=right] .mh-copy{grid-column:2;grid-row:1;justify-self:end}
+.mh[data-align=right] .mh-extra{grid-column:1;grid-row:1}
+
+/* where the effect's extra goes (effect.mjs extraPlace): "beside" is the
+   layout above; the others are set on the section as data-extra, and only
+   apply where the extra shows (wide, not stacked) */
+@media (min-width:1180px) and (not (max-aspect-ratio:5/6)){
+  .mh[data-extra=above-copy] .mh-body,.mh[data-extra=below-copy] .mh-body{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-content:end}
+  .mh[data-extra] .mh-body>.mh-copy{grid-column:1}
+  .mh[data-extra=above-copy] .mh-body>.mh-copy{grid-row:2}
+  .mh[data-extra=above-copy] .mh-body>.mh-extra{grid-column:1;grid-row:1;align-self:end;justify-self:start}
+  .mh[data-extra=below-copy] .mh-body>.mh-copy{grid-row:1}
+  .mh[data-extra=below-copy] .mh-body>.mh-extra{grid-column:1;grid-row:2;align-self:start;justify-self:start}
+  .mh[data-align=right][data-extra] .mh-body>.mh-extra{justify-self:end}
+  .mh[data-extra=overlay] .mh-body{grid-template-columns:minmax(0,1fr)}
+  .mh[data-extra=overlay] .mh-body>.mh-extra{position:absolute;right:var(--mh-pad);bottom:clamp(28px,5vw,64px);max-width:min(420px,40vw)}
+  .mh[data-align=right][data-extra=overlay] .mh-body>.mh-extra{right:auto;left:var(--mh-pad)}
+}
+
+/* the intro: copy rises in once. The runtime seeks these too when recording. */
+.mh.mh-live .mh-badge,.mh.mh-live .mh-title,.mh.mh-live .mh-lede,.mh.mh-live .mh-actions,.mh.mh-live .mh-note,.mh.mh-live .mh-extra{animation:mh-rise 1.1s cubic-bezier(.2,.8,.1,1) both}
+.mh.mh-live .mh-title{animation-delay:.08s}
+.mh.mh-live .mh-lede{animation-delay:.32s}
+.mh.mh-live .mh-actions{animation-delay:.46s}
+.mh.mh-live .mh-note{animation-delay:.58s}
+.mh.mh-live .mh-extra{animation-delay:.7s}
+/* revealed from below by a clip, not faded: the text is at full contrast the whole time it shows */
+@keyframes mh-rise{from{clip-path:inset(0 0 100% 0);transform:translateY(28px)}to{clip-path:inset(-30% -30% -30% -30%);transform:none}}
+
+/* the effect's extra (a picker, a legend) only where there is room for it beside the effect */
+@media (max-width:1179px){.mh-extra{display:none}}
+@media (max-width:1100px){.mh-copy{max-width:min(600px,52vw)}}
+/* stacked: phones, tablets and portrait frames put the effect above the copy */
+@media (max-width:899px),(max-aspect-ratio:5/6){
+  .mh-scrim,.mh[data-align=right] .mh-scrim,.mh[data-align=center] .mh-scrim{--mh-at:30% 74%;background:radial-gradient(ellipse 80% 42% at var(--mh-at),color-mix(in srgb,var(--mh-bg) calc(var(--mh-scrim) * 100%),transparent) 0%,color-mix(in srgb,var(--mh-bg) calc(var(--mh-scrim) * 75%),transparent) 60%,transparent 100%)}
+  .mh-body{grid-template-columns:minmax(0,1fr);align-items:end}
+  .mh-copy,.mh[data-align=right] .mh-copy{max-width:640px;grid-column:1;justify-self:start}
+  .mh-extra{display:none}
+  .mh[data-align=center] .mh-body{align-items:end}
+}
+@media (max-width:899px),(max-aspect-ratio:5/6){
+  .mh-body{padding-top:clamp(220px,38vh,46vh)}
+}
+@media (max-width:759px){
+  .mh-nav{display:none}
+  .mh-title{font-size:clamp(42px,12.4vw,64px);line-height:.98}
+  .mh-badge{margin-bottom:18px}
+  .mh-lede{margin-top:18px}
+  .mh-actions{margin-top:24px}
+  .mh-action{padding:11px 16px;font-size:13.5px}
+}
+@media (max-width:420px){.mh-action i{display:none}.mh-brand{font-size:17px}}
+@media (prefers-reduced-motion:reduce){
+  .mh:not(.mh-record) *{animation:none!important;transition:none!important}
+}

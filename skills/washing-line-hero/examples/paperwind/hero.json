@@ -1,0 +1,50 @@
+{
+  "brand": { "name": "Paperwind", "logo": "logo.svg", "href": "/" },
+  "nav": [
+    { "label": "Features", "href": "/features" },
+    { "label": "Pricing", "href": "/pricing" },
+    { "label": "Changelog", "href": "/changelog" }
+  ],
+  "action": { "label": "Download", "href": "/download" },
+  "hero": {
+    "badge": "Version 2 is out",
+    "title": "Notes light enough\nfor *the line.*",
+    "lede": "Paperwind is a notes app that opens in 0.3 seconds, works offline and weighs 12 MB. Version 2 adds shared notebooks and handwriting search.",
+    "actions": [
+      { "label": "Download free", "href": "/download" },
+      { "label": "What's new in 2.0", "href": "/changelog" }
+    ],
+    "note": "macOS, Windows, iOS and Android. Free for personal use.",
+    "align": "left"
+  },
+  "theme": {
+    "mode": "light",
+    "background": "#d9e8f6",
+    "ink": "#0f1722",
+    "accent": "#2f6fd6",
+    "fonts": { "display": "Manrope", "body": "Inter", "weight": 700 }
+  },
+  "effect": {
+    "seed": 7,
+    "skyTop": "#6fa6e3",
+    "clouds": 0.6,
+    "printTitle": "Paperwind 2",
+    "printLine": "Notes that weigh nothing. Out today.",
+    "printHeadline": "Light enough\nfor the line.",
+    "printSpecs": [
+      { "label": "Release", "value": "2.0.0" },
+      { "label": "Opens in", "value": "0.3 s" },
+      { "label": "Size", "value": "12 MB" },
+      { "label": "Price", "value": "Free" }
+    ],
+    "printChartLabel": "Weekly active, thousands",
+    "printFoot": "paperwind.example"
+  },
+  "motion": { "speed": 1, "pointer": true },
+  "meta": {
+    "title": "Paperwind 2: notes light enough for the line",
+    "description": "A notes app that opens in 0.3 seconds, works offline and weighs 12 MB. Version 2 adds shared notebooks and handwriting search.",
+    "url": "https://paperwind.example/",
+    "lang": "en"
+  }
+}

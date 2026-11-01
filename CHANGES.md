@@ -1,5 +1,10 @@
 # Changes
 
+## 1.2.0 (2026-11-01)
+
+- **New skill: `washing-line-hero`.** An interactive hero section: the brand's poster printed on a cotton cloth pinned to a washing line with wooden pegs, under a sky with drifting clouds. Visitors dent the cloth with the pointer, grab it anywhere and pull it (mouse or finger), and it swings back when they let go. A Verlet cloth simulation in three.js r180 (loaded from jsDelivr, pinned with SRI), stepped at a fixed 120 Hz so `record.mjs` writes the same 1080p video on any machine. Two examples (Paperwind, Halden Linen). Its checks pass at 390, 768, 1024 and 1440 px.
+- README, `skills.sh.json` (new "Interactive heroes" group), the Claude Code marketplace (the `lookbk` bundle and a single `washing-line-hero` plugin) and the Cursor manifest list eight skills. Plugin version 1.2.0.
+
 ## 1.1.0 (2026-10-26)
 
 ### Install from more places
