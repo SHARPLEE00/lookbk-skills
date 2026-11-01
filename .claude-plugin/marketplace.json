@@ -11,14 +11,15 @@
     {
       "name": "lookbk",
       "source": "./",
-      "description": "All seven free Lookbk skills in one plugin: two videos, a slide deck, link-preview images, an architecture diagram and two landing pages.",
+      "description": "All eight free Lookbk skills in one plugin: two videos, a slide deck, link-preview images, an architecture diagram, two landing pages and an interactive washing-line hero.",
       "category": "design",
       "tags": [
         "video",
         "slides",
         "images",
         "landing-page",
-        "diagram"
+        "diagram",
+        "hero-section"
       ]
     },
     {
@@ -97,6 +98,19 @@
       ],
       "license": "MIT",
       "homepage": "https://lookbk.dev/skills/waitlist-glow"
+    },
+    {
+      "name": "washing-line-hero",
+      "source": "./skills/washing-line-hero",
+      "description": "An interactive website hero: your poster on a cloth pinned to a washing line that visitors poke, grab and drag (three.js cloth simulation), plus a 1080p MP4. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "hero-section",
+        "interactive"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/washing-line-hero"
     }
   ]
 }

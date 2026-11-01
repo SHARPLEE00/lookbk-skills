@@ -5,17 +5,34 @@
     {
       "title": "Video",
       "description": "1080p MP4s rendered with HyperFrames on your machine.",
-      "skills": ["kinetic-title-drop", "pixel-quest-promo"]
+      "skills": [
+        "kinetic-title-drop",
+        "pixel-quest-promo"
+      ]
     },
     {
       "title": "Slides and images",
       "description": "A slide deck with PDF and PPTX export, link-preview cards and an architecture diagram.",
-      "skills": ["swiss-grid-deck", "editorial-og-card", "blueprint-architecture"]
+      "skills": [
+        "swiss-grid-deck",
+        "editorial-og-card",
+        "blueprint-architecture"
+      ]
     },
     {
       "title": "Web pages",
       "description": "Single-file landing and waitlist pages with sign-up forms tested in Chrome.",
-      "skills": ["mono-editorial-landing", "waitlist-glow"]
+      "skills": [
+        "mono-editorial-landing",
+        "waitlist-glow"
+      ]
+    },
+    {
+      "title": "Interactive heroes",
+      "description": "Hero sections visitors can touch, with a paste-in embed and a 1080p video.",
+      "skills": [
+        "washing-line-hero"
+      ]
     }
   ]
 }
