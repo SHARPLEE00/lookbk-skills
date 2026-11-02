@@ -175,12 +175,13 @@ Each skill's own `SKILL.md` lists exactly what it needs and the steps your agent
 
 ## More skills
 
-These eight are the free part of a catalog of 98 skills at [lookbk.dev](https://lookbk.dev/skills?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), as of November 2026. One more free skill, [Roller Diner Hero](https://lookbk.dev/skills/roller-diner-hero?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), installs from lookbk.dev with a free account. [Lookbk Pro](https://lookbk.dev/pricing?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more) adds the other 90, including:
+These eight are the free part of a catalog of 225 skills at [lookbk.dev](https://lookbk.dev/skills?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), as of 2 November 2026, with new ones every Tuesday. One more free skill, [Roller Diner Hero](https://lookbk.dev/skills/roller-diner-hero?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), installs from lookbk.dev with a free account. [Lookbk Pro](https://lookbk.dev/pricing?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more) adds the other 216, including:
 
-- **Launch films** made from your site and real screens, cut on a beat grid ([Launch Films](https://lookbk.dev/skills/series/launch-films?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more))
-- **Animated website heroes** in WebGL, canvas and scroll, with a paste-in embed and a 1080p video ([Motion Heroes](https://lookbk.dev/skills/series/motion-heroes?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more))
-- **Video background heroes** with the headline behind the subject ([Footage Heroes](https://lookbk.dev/skills/series/footage-heroes?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more))
-- Pitch, keynote, thesis and workshop decks, quote cards, infographics, product shots, docs sites and more
+- **Animated website heroes** in WebGL, canvas and scroll, with a paste-in embed and a 1080p video ([Motion Heroes](https://lookbk.dev/skills/series/motion-heroes?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), 77 skills)
+- **Video background heroes**, with the headline behind the subject or over a seamless loop ([Footage Heroes](https://lookbk.dev/skills/series/footage-heroes?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), [Loop Heroes](https://lookbk.dev/skills/series/loop-heroes?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more))
+- **Launch and UI demo films** made from your site and real screens, cut on a beat grid with generated music ([Launch & Demo Films](https://lookbk.dev/skills/series/launch-demo-films?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), [Launch Films](https://lookbk.dev/skills/series/launch-films?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more))
+- **Social shorts and data videos** for 9:16 and 1:1 feeds ([Social Shorts](https://lookbk.dev/skills/series/social-shorts?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more), [Data Stories](https://lookbk.dev/skills/series/data-stories?utm_source=github&utm_medium=repo&utm_campaign=free-skills-more))
+- Pitch, keynote and workshop decks, page kits, icon sets, product shots, docs sites and more
 
 Every skill on the site shows its rendered result before you install it.
 
