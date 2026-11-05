@@ -9,7 +9,7 @@
     "url": "https://lookbk.dev"
   },
   "homepage": "https://lookbk.dev/skills",
-  "repository": "https://github.com/SHARPLEE00/lookbk-skills",
+  "repository": "https://github.com/lookbkdev/lookbk-skills",
   "license": "MIT",
   "keywords": [
     "video",
@@ -26,8 +26,8 @@
     "design"
   ],
   "icon": "./assets/logo.png",
-  "documentationUrl": "https://github.com/SHARPLEE00/lookbk-skills#readme",
-  "supportUrl": "https://github.com/SHARPLEE00/lookbk-skills/issues",
+  "documentationUrl": "https://github.com/lookbkdev/lookbk-skills#readme",
+  "supportUrl": "https://github.com/lookbkdev/lookbk-skills/issues",
   "privacyPolicyUrl": "https://lookbk.dev/privacy",
   "termsOfServiceUrl": "https://lookbk.dev/terms"
 }

@@ -9,9 +9,9 @@
 
 ### Install from more places
 
-- **Claude Code plugin marketplace.** Added `.claude-plugin/marketplace.json` (marketplace `lookbk-skills`) and `.claude-plugin/plugin.json` (plugin `lookbk`, version 1.1.0, MIT). `/plugin marketplace add SHARPLEE00/lookbk-skills` then `/plugin install lookbk@lookbk-skills` installs all seven skills. Each skill is also listed as its own plugin (for example `swiss-grid-deck@lookbk-skills`) for people who want just one. Checked with `claude plugin validate .` (passes) and a local `marketplace add` and `install` on Claude Code 2.1.310: `lookbk` loads 7 skills, a single-skill plugin loads 1.
+- **Claude Code plugin marketplace.** Added `.claude-plugin/marketplace.json` (marketplace `lookbk-skills`) and `.claude-plugin/plugin.json` (plugin `lookbk`, version 1.1.0, MIT). `/plugin marketplace add lookbkdev/lookbk-skills` then `/plugin install lookbk@lookbk-skills` installs all seven skills. Each skill is also listed as its own plugin (for example `swiss-grid-deck@lookbk-skills`) for people who want just one. Checked with `claude plugin validate .` (passes) and a local `marketplace add` and `install` on Claude Code 2.1.310: `lookbk` loads 7 skills, a single-skill plugin loads 1.
 - **Anthropic directory fields.** `plugin.json` sets `icon` (`assets/logo.png`), `documentationUrl`, `supportUrl`, `privacyPolicyUrl` and `termsOfServiceUrl`, which the directory listing reads.
-- **skills.sh.** Added `skills.sh.json`, which groups the skills on the skills.sh repo page into Video, Slides and images, and Web pages. `npx skills add SHARPLEE00/lookbk-skills` finds all 7 skills (checked with skills CLI 1.7.4 against a local copy).
+- **skills.sh.** Added `skills.sh.json`, which groups the skills on the skills.sh repo page into Video, Slides and images, and Web pages. `npx skills add lookbkdev/lookbk-skills` finds all 7 skills (checked with skills CLI 1.7.4 against a local copy).
 - **Cursor.** Added `.cursor-plugin/plugin.json` (plugin `lookbk`), the manifest Cursor's plugin marketplace reads.
 
 ### README
@@ -20,7 +20,7 @@
 - Install instructions for the `skills` CLI, the Claude Code plugin marketplace, Cursor, Codex and by hand, plus the existing Lookbk installer.
 - Each skill now has its own section: what it makes, what it needs, a prompt to try, and a link to its page on lookbk.dev.
 - A "What the skills run and fetch" section listing what runs on your machine, what is downloaded when a skill is used, and what is sent elsewhere.
-- "More skills" brought up to date: 58 skills in the catalog, Roller Diner Hero as an eighth free skill on lookbk.dev, 50 in Pro, and a link to [awesome-ai-motion-videos](https://github.com/SHARPLEE00/awesome-ai-motion-videos).
+- "More skills" brought up to date: 58 skills in the catalog, Roller Diner Hero as an eighth free skill on lookbk.dev, 50 in Pro, and a link to [awesome-ai-motion-videos](https://github.com/lookbkdev/awesome-ai-motion-videos).
 - Links to lookbk.dev carry `utm_source=github&utm_medium=repo` with `utm_campaign=free-skills-readme` (skill links) or `free-skills-more` (More skills), so visits from this README show up as their own channel.
 
 ### Skills
