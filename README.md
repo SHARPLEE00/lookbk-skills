@@ -16,13 +16,13 @@ Every picture below was rendered by the skill itself. The skills run on your own
 ### Any agent: the `skills` CLI
 
 ```bash
-npx skills add SHARPLEE00/lookbk-skills
+npx skills add lookbkdev/lookbk-skills
 ```
 
 It lists the eight skills, asks which ones and which agents to install them for, and copies them into each agent's skills folder. Add `-g` to install for every project instead of the current one. To skip the questions:
 
 ```bash
-npx skills add SHARPLEE00/lookbk-skills --skill kinetic-title-drop -a claude-code -g -y
+npx skills add lookbkdev/lookbk-skills --skill kinetic-title-drop -a claude-code -g -y
 ```
 
 The CLI needs Node.js 22.20 or later. It sends anonymous install counts to [skills.sh](https://skills.sh); set `DISABLE_TELEMETRY=1` to turn that off.
@@ -32,22 +32,22 @@ The CLI needs Node.js 22.20 or later. It sends anonymous install counts to [skil
 Inside a Claude Code session:
 
 ```
-/plugin marketplace add SHARPLEE00/lookbk-skills
+/plugin marketplace add lookbkdev/lookbk-skills
 /plugin install lookbk@lookbk-skills
 ```
 
 `lookbk` installs all eight skills. Their commands carry the plugin name, such as `/lookbk:kinetic-title-drop`, and Claude also uses them when you simply ask for the thing. To install one skill instead, use its name, for example `/plugin install swiss-grid-deck@lookbk-skills`. Install either the bundle or single skills, not both.
 
-From your shell, the same steps are `claude plugin marketplace add SHARPLEE00/lookbk-skills` and `claude plugin install lookbk@lookbk-skills`. On Claude Code 2.1.275 or later, one line does both:
+From your shell, the same steps are `claude plugin marketplace add lookbkdev/lookbk-skills` and `claude plugin install lookbk@lookbk-skills`. On Claude Code 2.1.275 or later, one line does both:
 
 ```
-/plugin install lookbk --marketplace SHARPLEE00/lookbk-skills
+/plugin install lookbk --marketplace lookbkdev/lookbk-skills
 ```
 
 ### Cursor
 
 ```bash
-npx skills add SHARPLEE00/lookbk-skills -a cursor -g
+npx skills add lookbkdev/lookbk-skills -a cursor -g
 ```
 
 Or copy skill folders by hand: Cursor reads `.agents/skills/` and `.cursor/skills/` in a project, and `~/.agents/skills/` and `~/.cursor/skills/` for every project. It also reads the Claude Code and Codex skill folders.
@@ -55,7 +55,7 @@ Or copy skill folders by hand: Cursor reads `.agents/skills/` and `.cursor/skill
 ### Codex
 
 ```bash
-npx skills add SHARPLEE00/lookbk-skills -a codex -g
+npx skills add lookbkdev/lookbk-skills -a codex -g
 ```
 
 Or copy skill folders by hand: Codex reads `.agents/skills/` in your repository and `~/.agents/skills/` for every project.
@@ -65,7 +65,7 @@ Or copy skill folders by hand: Codex reads `.agents/skills/` in your repository 
 A skill is installed when its folder, with `SKILL.md` directly inside it, sits in a folder your agent reads. Keep the folder name the same as the skill's name.
 
 ```bash
-git clone https://github.com/SHARPLEE00/lookbk-skills.git
+git clone https://github.com/lookbkdev/lookbk-skills.git
 mkdir -p ~/.claude/skills ~/.agents/skills
 cp -r lookbk-skills/skills/* ~/.claude/skills/    # Claude Code
 cp -r lookbk-skills/skills/* ~/.agents/skills/    # Codex, Cursor, Gemini CLI, Copilot, OpenCode
@@ -185,7 +185,7 @@ These eight are the free part of a catalog of 225 skills at [lookbk.dev](https:/
 
 Every skill on the site shows its rendered result before you install it.
 
-Also from Lookbk: [awesome-ai-motion-videos](https://github.com/SHARPLEE00/awesome-ai-motion-videos), a curated list of motion graphics, launch films, 3D scenes and games that AI coding models made in code, collected from X with credits and, where the creator published it, the exact prompt.
+Also from Lookbk: [awesome-ai-motion-videos](https://github.com/lookbkdev/awesome-ai-motion-videos), a curated list of motion graphics, launch films, 3D scenes and games that AI coding models made in code, collected from X with credits and, where the creator published it, the exact prompt.
 
 ## License
 
